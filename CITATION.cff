@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+message: >-
+  If you cite a scenario, cite it by its CAN- identifier and the corpus version
+  (e.g. "CAN-CB-012, corpus-v1"); rows are versioned and never silently edited.
+title: "Editing Surface Contract"
+type: dataset
+authors:
+  - name: "Electro-Jam Instruments"
+abstract: >-
+  A cross-editor accessibility conformance corpus and harness for HTML editing
+  surfaces: 218 canonical editing operations catalogued from editor source,
+  a behavioural contract for what an editing surface must announce, and a
+  zero-dependency harness that measures any editor against it headless in CI.
+  Measurements are browser-told, not user-heard, and are dated and pinned to
+  editor commits.
+repository-code: "https://github.com/Electro-Jam-Instruments/Accessible-editor-agen"
+license: MIT
+version: corpus-v1
+date-released: "2026-08-31"

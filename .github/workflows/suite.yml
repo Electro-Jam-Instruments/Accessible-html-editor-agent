@@ -1,0 +1,92 @@
+# Suite regression gate.
+#
+# Rebuilds every deterministically-buildable subject from its exact pins and
+# gates each against its committed baseline in suite/baselines/<subject>.json.
+# A run fails only when an assertion that used to pass stops passing — "run
+# reports; --check gates" (suite/README.md). Most subjects are red on purpose;
+# that is the finding, not a regression, so only --check may fail a build.
+#
+# playwright-core@1.56.0 is pinned BECAUSE it ships chromium revision 1194 —
+# Chromium 141.0.7390.37, the exact build every committed baseline was measured
+# on. Bumping this pin is a reviewed change like any other pin.
+
+name: Suite
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+env:
+  PLAYWRIGHT_BROWSERS_PATH: ${{ github.workspace }}/.pw-browsers
+
+jobs:
+  check:
+    name: Baseline check (4 subjects)
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: 22
+
+      # Subject dirs have exact-pinned package.json but gitignored lockfiles
+      # (third-party trees are never committed), so this is `npm install`, not
+      # `npm ci` — with every version exact it resolves the same tree each time.
+      - name: Cache subject node_modules
+        uses: actions/cache@v4
+        with:
+          path: |
+            suite/subjects/lexical/node_modules
+            suite/subjects/lexical-next/node_modules
+            suite/subjects/tiptap/node_modules
+          key: subjects-${{ runner.os }}-${{ hashFiles('suite/subjects/*/package.json') }}
+
+      - name: Install subject dependencies (exact pins)
+        run: |
+          for d in lexical lexical-next tiptap; do
+            (cd "suite/subjects/$d" && npm install --no-audit --no-fund)
+          done
+
+      - name: Cache Chromium
+        uses: actions/cache@v4
+        with:
+          path: ${{ github.workspace }}/.pw-browsers
+          key: chromium-1194-${{ runner.os }}
+
+      - name: Install Chromium 141 (playwright revision 1194)
+        run: |
+          npx --yes playwright-core@1.56.0 install chromium --with-deps
+          test -x "$PLAYWRIGHT_BROWSERS_PATH/chromium-1194/chrome-linux/chrome"
+          echo "HARNESS_CHROME=$PLAYWRIGHT_BROWSERS_PATH/chromium-1194/chrome-linux/chrome" >> "$GITHUB_ENV"
+
+      - name: Build subjects
+        run: |
+          node suite/subjects/lexical/build.mjs        # -> lexical-stock.html
+          node suite/subjects/lexical-next/build.mjs   # -> lexical-next.html + lexical-next-max.html
+          node suite/subjects/tiptap/build.mjs         # -> tiptap.html
+
+      # Sequential on purpose: one Chromium at a time (parallel instances risk
+      # flaky measurement). A missing baseline must fail, not be silently
+      # created: --check writes a fresh baseline on first run, which in CI
+      # would mask a deleted/renamed file as a green build.
+      - name: Check subjects against baselines
+        working-directory: suite
+        run: |
+          rc=0
+          for s in lexical-stock lexical-next lexical-next-max tiptap; do
+            if [ ! -f "baselines/$s.json" ]; then
+              echo "::error::missing baselines/$s.json — refusing to let --check create one in CI"
+              rc=1
+              continue
+            fi
+            echo "== $s =="
+            node run.mjs --check "--subject=$s" || rc=1
+          done
+          exit $rc

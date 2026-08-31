@@ -1,0 +1,17 @@
+node_modules/
+__pycache__/
+
+# Generated subject pages are built on your machine by their recipes and are
+# never committed — a committed bundle is redistribution with notice
+# obligations we refuse to take on (see ATTRIBUTION.md). The three hand-written
+# subject pages below are ours and are the only .html that belongs in git.
+suite/subjects/*.html
+!suite/subjects/contenteditable.html
+!suite/subjects/textarea-markdown.html
+!suite/subjects/textarea-markdown-fixed.html
+suite/subjects/*.LEGAL.txt
+suite/subjects/*/package-lock.json
+suite/subjects/.build/
+
+# Fresh measurement output. Dated, citable runs live in suite/examples/.
+suite/results.json
