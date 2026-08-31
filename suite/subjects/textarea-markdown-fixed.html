@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Subject: markdown textarea + announcements (target behaviour)</title>
+    <style>
+      body { font: 16px/1.5 system-ui, sans-serif; margin: 2rem; }
+      #editor { width: 40rem; height: 12rem; font: 14px/1.5 ui-monospace, monospace; }
+      .visually-hidden {
+        position: absolute; width: 1px; height: 1px; overflow: hidden;
+        clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Markdown <code>&lt;textarea&gt;</code> — with announcements</h1>
+    <label for="editor">Note body</label><br />
+
+    <textarea id="editor" autocomplete="off" autocorrect="off" autocapitalize="off"
+              spellcheck="false"></textarea>
+
+    <!--
+      The live region is in the static markup and starts EMPTY.
+
+      This is not cosmetic. Chromium's PostprocessEvents() drops
+      LIVE_REGION_CHANGED when LIVE_REGION_CREATED is present on the same node,
+      and both Windows and AuraLinux then drop LIVE_REGION_CREATED entirely — so
+      a region created in the same update as its first message announces
+      nothing. See ../../chromium-ax-observation.md. Mount empty at boot.
+    -->
+    <div id="announcer" class="visually-hidden" aria-live="polite" aria-atomic="false"></div>
+
+    <script>
+      /*
+       * Identical editing behaviour to textarea-markdown.html — same
+       * @uiw/react-md-editor handleKeyDown logic, same programmatic insertion —
+       * plus the one thing that is missing: the editor says what it did.
+       *
+       * The design rules encoded here:
+       *
+       *  - Each announcement gets its OWN element appended to the region.
+       *    Nothing shares a slot, so no message can be lost to overwrite, and
+       *    two announcements in quick succession cannot clobber one another.
+       *    (No debounce, no timer: the announcement is emitted in the same turn
+       *    as the mutation that caused it.)
+       *
+       *  - Append only. Trimming happens from the front, and removals are not
+       *    relevant under the default aria-relevant="additions text", so they
+       *    emit nothing.
+       *
+       *  - Polite, never assertive: the user is mid-keystroke.
+       */
+
+      const editor = document.getElementById('editor');
+      const announcer = document.getElementById('announcer');
+      const MAX_MESSAGES = 40;
+
+      function announce(message) {
+        const node = document.createElement('div');
+        node.textContent = message;
+        announcer.appendChild(node);
+        while (announcer.childElementCount > MAX_MESSAGES) {
+          announcer.removeChild(announcer.firstElementChild);
+        }
+      }
+
+      function insertTextAtPosition(input, text) {
+        input.focus();
+        let ok = false;
+        if (text !== '') {
+          ok = document.execCommand && document.execCommand('insertText', false, text);
+        }
+        if (!ok && typeof input.setRangeText === 'function') {
+          input.setRangeText(text);
+          const p = input.selectionStart + text.length;
+          input.setSelectionRange(p, p);
+          input.dispatchEvent(new Event('input', { bubbles: true }));
+        }
+      }
+
+      const LIST_LINE = /^\s*([-*+]|\d+\.)\s/;
+
+      /** 1-based position of the list item on `lineIndex`, counting back over
+       *  the contiguous run of list lines above it. */
+      function itemPosition(value, lineIndex) {
+        const lines = value.split('\n');
+        let n = 0;
+        for (let i = lineIndex; i >= 0 && LIST_LINE.test(lines[i]); i--) n++;
+        return n;
+      }
+
+      function lineIndexAt(value, offset) {
+        return value.slice(0, offset).split('\n').length - 1;
+      }
+
+      let suppressInputAnnounce = false;
+      let previousLinePrefix = '';
+
+      editor.addEventListener('keydown', function handleKeyDown(e) {
+        const target = e.target;
+        const startVal = target.value.substr(0, target.selectionStart);
+        const valArr = startVal.split('\n');
+        const currentLineStr = valArr[valArr.length - 1];
+
+        if (
+          e.keyCode === 13 &&
+          e.code &&
+          e.code.toLowerCase() === 'enter' &&
+          (/^(-|\*)\s/.test(currentLineStr) || /^\d+.\s/.test(currentLineStr)) &&
+          !e.shiftKey
+        ) {
+          e.stopPropagation();
+          e.preventDefault();
+
+          let startStr = '\n- ';
+          let kind = 'bulleted';
+          if (currentLineStr.startsWith('*')) startStr = '\n* ';
+          if (
+            currentLineStr.startsWith('- [ ]') ||
+            currentLineStr.startsWith('- [X]') ||
+            currentLineStr.startsWith('- [x]')
+          ) {
+            startStr = '\n- [ ] ';
+            kind = 'task';
+          }
+          if (/^\d+.\s/.test(currentLineStr)) {
+            startStr = '\n' + (parseInt(currentLineStr, 10) + 1) + '. ';
+            kind = 'numbered';
+          }
+
+          suppressInputAnnounce = true;
+          insertTextAtPosition(target, startStr);
+          suppressInputAnnounce = false;
+
+          // THE FIX. The user pressed one key and the editor supplied a marker
+          // on their behalf; say so, and say which item they are now in.
+          const idx = lineIndexAt(target.value, target.selectionStart);
+          const position = itemPosition(target.value, idx);
+          announce(kind + ' list item ' + position);
+          previousLinePrefix = target.value.split('\n')[idx].slice(0, target.selectionStart);
+        }
+      });
+
+      // The other half: the user typed "-" then space themselves. No characters
+      // were inserted on their behalf, but the meaning of the line changed —
+      // it is now a list item — and nothing in the accessibility tree conveys
+      // that, because a textarea has no structure. So say it.
+      editor.addEventListener('input', function () {
+        if (suppressInputAnnounce) return;
+        const before = editor.value.slice(0, editor.selectionStart);
+        const lines = before.split('\n');
+        const current = lines[lines.length - 1];
+        const wasBareMarker = /^\s*[-*+]$/.test(previousLinePrefix);
+        previousLinePrefix = current;
+        if (!/^\s*[-*+]\s$/.test(current)) return;
+        if (!wasBareMarker) return;
+        const idx = lines.length - 1;
+        const position = itemPosition(editor.value, idx);
+        announce('bulleted list, item ' + position);
+      });
+
+      window.__a11ySubject = {
+        id: 'textarea-markdown-fixed',
+        label: 'markdown textarea + announcer',
+        editorSelector: '#editor',
+        kind: 'plaintext',
+        notes:
+          'Same editing behaviour as textarea-markdown.html, plus an append-only ' +
+          'polite live region announcing list creation and list continuation.',
+      };
+    </script>
+  </body>
+</html>

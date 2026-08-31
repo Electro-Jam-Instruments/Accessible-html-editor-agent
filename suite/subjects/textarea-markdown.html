@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Subject: markdown textarea (current Open Notebook behaviour)</title>
+    <style>
+      body { font: 16px/1.5 system-ui, sans-serif; margin: 2rem; }
+      #editor { width: 40rem; height: 12rem; font: 14px/1.5 ui-monospace, monospace; }
+    </style>
+  </head>
+  <body>
+    <h1>Markdown <code>&lt;textarea&gt;</code> — current behaviour</h1>
+    <label for="editor">Note body</label><br />
+
+    <textarea id="editor" autocomplete="off" autocorrect="off" autocapitalize="off"
+              spellcheck="false"></textarea>
+
+    <script>
+      /*
+       * Faithful reproduction of @uiw/react-md-editor's list handling, which is
+       * what this project ships today.
+       *
+       * Source: frontend/node_modules/@uiw/react-md-editor/src/components/
+       *         TextArea/handleKeyDown.tsx  (v4.0.8)
+       *
+       * Two facts about that code matter here:
+       *
+       *  1. There is NO `- ` autoformat. Typing a hyphen and a space in this
+       *     editor inserts a hyphen and a space; no list is created, in the DOM
+       *     or in the accessibility tree. The markdown only becomes a list when
+       *     the *preview* is rendered, which the editing user never focuses.
+       *
+       *  2. Enter on a line matching /^(-|\*)\s/ or /^\d+.\s/ is intercepted:
+       *     the default newline is prevented and the editor inserts "\n- "
+       *     itself, via document.execCommand('insertText').
+       *
+       * (2) is a programmatic insertion. The user pressed one key and received
+       * three characters. execCommand('insertText') fires `input` and moves the
+       * caret, but it produces no announcement of any kind — there is no live
+       * region on this page, and the browser will not invent one. This subject
+       * is expected to FAIL every announcement assertion. That is the point.
+       */
+
+      // Mirrors utils/InsertTextAtPosition.ts: execCommand first, setRangeText fallback.
+      function insertTextAtPosition(input, text) {
+        input.focus();
+        let ok = false;
+        if (text !== '') {
+          ok = document.execCommand && document.execCommand('insertText', false, text);
+        }
+        if (!ok && typeof input.setRangeText === 'function') {
+          input.setRangeText(text);
+          const p = input.selectionStart + text.length;
+          input.setSelectionRange(p, p);
+          input.dispatchEvent(new Event('input', { bubbles: true }));
+        }
+      }
+
+      const editor = document.getElementById('editor');
+
+      editor.addEventListener('keydown', function handleKeyDown(e) {
+        const target = e.target;
+        const startVal = target.value.substr(0, target.selectionStart);
+        const valArr = startVal.split('\n');
+        const currentLineStr = valArr[valArr.length - 1];
+
+        if (
+          e.keyCode === 13 &&
+          e.code &&
+          e.code.toLowerCase() === 'enter' &&
+          (/^(-|\*)\s/.test(currentLineStr) || /^\d+.\s/.test(currentLineStr)) &&
+          !e.shiftKey
+        ) {
+          e.stopPropagation();
+          e.preventDefault();
+
+          let startStr = '\n- ';
+          if (currentLineStr.startsWith('*')) startStr = '\n* ';
+          if (
+            currentLineStr.startsWith('- [ ]') ||
+            currentLineStr.startsWith('- [X]') ||
+            currentLineStr.startsWith('- [x]')
+          ) {
+            startStr = '\n- [ ] ';
+          }
+          if (/^\d+.\s/.test(currentLineStr)) {
+            startStr = '\n' + (parseInt(currentLineStr, 10) + 1) + '. ';
+          }
+
+          insertTextAtPosition(target, startStr);
+          // ...and nothing is announced. No live region exists on this page.
+        }
+      });
+
+      window.__a11ySubject = {
+        id: 'textarea-markdown',
+        label: 'markdown textarea (ours, today)',
+        editorSelector: '#editor',
+        kind: 'plaintext',
+        notes:
+          "Reproduces @uiw/react-md-editor v4.0.8 handleKeyDown list continuation. " +
+          'No live region anywhere on the page.',
+      };
+    </script>
+  </body>
+</html>

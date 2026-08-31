@@ -1,0 +1,13 @@
+{
+  "name": "a11y-subject-tiptap",
+  "private": true,
+  "version": "0.0.0",
+  "description": "Offline harness subject: stock Tiptap StarterKit. Not part of the app.",
+  "type": "module",
+  "devDependencies": {
+    "@tiptap/core": "3.30.5",
+    "@tiptap/pm": "3.30.5",
+    "@tiptap/starter-kit": "3.30.5",
+    "esbuild": "0.25.12"
+  }
+}

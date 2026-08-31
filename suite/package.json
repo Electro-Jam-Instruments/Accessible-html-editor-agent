@@ -1,0 +1,11 @@
+{
+  "name": "editing-surface-contract",
+  "version": "1.0.0",
+  "description": "A cross-editor accessibility conformance corpus and harness for HTML editing surfaces.",
+  "license": "MIT",
+  "type": "module",
+  "private": true,
+  "engines": {
+    "node": ">=22"
+  }
+}

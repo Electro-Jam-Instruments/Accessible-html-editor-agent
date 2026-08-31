@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Subject: bare contenteditable</title>
+    <style>
+      body { font: 16px/1.5 system-ui, sans-serif; margin: 2rem; }
+      #editor {
+        min-height: 8rem; padding: .5rem; border: 1px solid #888; white-space: pre-wrap;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Bare <code>contenteditable</code> baseline</h1>
+    <p id="label">Note body</p>
+
+    <!--
+      The control condition. No autoformatting, no list handling, no live
+      region. Whatever the browser does with a keystroke in a plain editing
+      host is what this subject does. Any assertion this subject passes is
+      free; any it fails is the floor everyone else is measured against.
+    -->
+    <div id="editor" contenteditable="true" role="textbox" aria-multiline="true"
+         aria-labelledby="label"></div>
+
+    <script>
+      window.__a11ySubject = {
+        id: 'contenteditable',
+        label: 'bare contenteditable',
+        editorSelector: '#editor',
+        kind: 'rich',
+        notes: 'No autoformatting and no announcements. The control condition.',
+      };
+    </script>
+  </body>
+</html>
