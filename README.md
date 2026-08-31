@@ -76,23 +76,19 @@ should improve.
 An edit happens, and what the user hears is decided across five layers. The gap is always
 in the same place.
 
-```mermaid
-flowchart TD
-    L0["<b>0 · Scenario</b><br/>user types &quot;- &quot; and the editor makes a list"]
-    L1["<b>1 · DOM / ARIA</b><br/>what is expressible declaratively"]
-    L2["<b>2 · Browser AX tree</b><br/>what Chromium computes: state + generated events"]
-    L3["<b>3 · Live region</b><br/>what is left over, that the author must<br/>synthesise as an English string"]
-    L4["<b>4 · Platform API</b><br/>UIA · AT-SPI2 · NSAccessibility"]
-    L5["<b>5 · Screen reader</b><br/>decides what to say"]
+Information flows downward, layer 0 through layer 5:
 
-    L0 --> L1 --> L2 --> L3 --> L4 --> L5
+| Layer | | What it carries |
+|---:|---|---|
+| 0 | Scenario | user types `- ` and the editor makes a list |
+| 1 | DOM / ARIA | what is expressible declaratively |
+| 2 | Browser AX tree | what Chromium computes: state + generated events |
+| **3** | **Live region — ⚠ the gap is here** | what is left over, that the author must synthesise as an English string |
+| 4 | Platform API | UIA · AT-SPI2 · NSAccessibility |
+| 5 | Screen reader | decides what to say |
 
-    G["<b>ARIA can say 'this is a list'.</b><br/>It has no way to say<br/><b>'a list just started'</b>."]
-    G -.- L3
-
-    style L3 fill:#7f1d1d,stroke:#ef4444,stroke-width:3px,color:#fff
-    style G fill:#1e293b,stroke:#ef4444,stroke-width:2px,color:#fff
-```
+> **ARIA can say "this is a list." It has no way to say "a list just started."** That
+> missing sentence is layer 3's entire job.
 
 **Layer 3 is the diagnosis.** ARIA is overwhelmingly a vocabulary for **state**: this is a
 list, this item is at level 2, item 3 of 7, this control is pressed. A screen reader reads

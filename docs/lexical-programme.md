@@ -10,23 +10,12 @@ that lives in [LEXICAL-PLAN.md](lexical-plan.md).
 
 ## The arc
 
-```mermaid
-flowchart LR
-    A["<b>1 · Analyse</b><br/>agents read source<br/>174 scenarios"]
-    B["<b>2 · Baseline</b><br/>measure a real build<br/>in a real browser"]
-    C["<b>3 · Specify</b><br/>one clause per shape<br/>must FAIL first"]
-    D["<b>4 · Fix</b><br/>announcer beside its node<br/>their architecture"]
-    E["<b>5 · Online</b><br/>baseline + CI<br/>regressions caught"]
-
-    A --> B --> C --> D --> E
-    E -. "new feature ships" .-> A
-
-    style A fill:#1e3a5f,stroke:#60a5fa,color:#fff
-    style B fill:#1e3a5f,stroke:#60a5fa,color:#fff
-    style C fill:#134e4a,stroke:#2dd4bf,color:#fff
-    style D fill:#134e4a,stroke:#2dd4bf,color:#fff
-    style E fill:#3b1e5f,stroke:#c084fc,color:#fff
-```
+1. **Analyse** — agents read the source; 174 scenarios inventoried.
+2. **Baseline** — measure a real build in a real browser.
+3. **Specify** — one contract clause per shape; each **must FAIL first**.
+4. **Fix** — an announcer beside its node, in their architecture.
+5. **Online** — committed baseline + CI; regressions caught.
+6. …and when a new feature ships, back to step 1.
 
 The loop back is the point. A one-time audit decays the day someone ships a feature; this
 returns to step 1 on every change.
