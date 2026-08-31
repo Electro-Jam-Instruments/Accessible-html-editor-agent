@@ -25,6 +25,61 @@ without us.
 *This is a proposed contract, not a standard. It is not endorsed by any standards body or
 by any editor vendor.*
 
+## The data at a glance
+
+Measured 2026-08 in a real browser (Chromium 141.0.7390.37, headless — **browser-told,
+not user-heard**; no screen reader in the loop), over the 24 container-centric operations
+the suite currently drives: lists, headings, blockquotes, code blocks, checklists,
+history. Each editor's denominator excludes operations it does not implement — `n/a` is
+never counted as silence. The full 218-operation corpus, read from source, is the table
+in Part I; every cell below is reproducible from
+[`suite/examples/report-2026-08.json`](suite/examples/report-2026-08.json).
+
+| | Open Notebook (raw `@uiw` 4.0.8) | Open Notebook (our fixes) | Lexical 0.49 (stock React) | Lexical nightly (all announcers) | Tiptap StarterKit 3.30 |
+|---|---:|---:|---:|---:|---:|
+| Operations measured | 14 | 16 | 18 | 18 | 20 |
+| **Information reaches the user** | **14%** | **50%** | **94%** | **94%** | **95%** |
+| — through the accessibility API itself, no live region | 14% | 13% | 94% | 78% | 95% |
+| — only because the editor wrote a live region | 0% | 38%¹ | 0% | 17% | 0% |
+| **Told at the moment it happens** | **0%** | **38%**¹ | **0%** | **17%** | **0%** |
+
+The last two rows are identical, and that identity is a finding: **in every editor
+measured, the only channel that ever says anything *at the moment* is a live region.**
+The API rows are silent rows — the semantics are in the tree, but nothing tells the user
+until they stop and go looking.
+
+¹ Our own fixes announce through a live region over a plaintext `<textarea>`: the user
+hears the change once, but there is no structure to return to afterwards. Real progress,
+and still the weakest kind of "reaches the user" there is.
+
+**Why the live-region column matters.** A live region is an author writing an English
+sentence because the platform gave them no way to say it semantically. Wherever that
+column is non-zero, the accessibility API is missing a way to describe what just
+happened; wherever it is zero while "reaches the user" is high, the information sits
+silently in the tree — nothing can say *"a list just started."* Both halves point at the
+same gap (Part II), and here is where it lives, layer by layer:
+
+| Layer | What is missing | Evidence |
+|---|---|---|
+| ARIA / the web platform | Any vocabulary for **transitions**. Roles and states describe where you *are*, never what *just happened*; `ariaNotify` carries only a free-text string, so it is a built-in live region, not semantics. A semantic `kind` on it is this project's standing proposal. | [`docs/the-gap.md`](docs/the-gap.md) · [`ROADMAP.md`](ROADMAP.md) |
+| Chromium | `<pre>` maps to `generic` (the preformatted-ness is lost; `<code>` keeps its role, which Windows and Linux mappings then collapse — next rows); list item counts are absent from its CDP projection; and the only "this just happened" channel it forwards for editing semantics is live-region text. | [`docs/platform-rescue.md`](docs/platform-rescue.md) · [`docs/observing-chromium.md`](docs/observing-chromium.md) |
+| Windows / UIA | Possibly the least missing: UIA's text-attribute system (`StyleId_Quote`, list styles) *could* carry container identity without any live region — whether Chromium populates it is unverified and top of the validation list. Meanwhile the MSAA/IA2 mapping collapses the `code` role into a frame type shared with `abbr` and `time`. | [`docs/platform-apis.md`](docs/platform-apis.md) · [`docs/platform-rescue.md`](docs/platform-rescue.md) |
+| Linux / AT-SPI2 | Rich caret and text-change stream — richer than CDP for lists (item counts survive here) — but no read-only state is set, `code` collapses to a static role, and live-region events can be dropped entirely. | [`research/atspi/FINDINGS.md`](research/atspi/FINDINGS.md) · [`docs/platform-rescue.md`](docs/platform-rescue.md) |
+| Screen readers (NVDA, measured) | **No code role exists at all** — a perfectly-marked-up code block cannot be conveyed as one; editable lists lose item counts. Rescue settings (blockquote reporting) paper over some of this, per-user. | [`docs/platform-rescue.md`](docs/platform-rescue.md) |
+
+Every one of those rows shrinks the live-region column if fixed — which is the long-term
+answer. The short-term answer is the loop this repository runs:
+
+**How this keeps a product accessible.** Agents read the editor's source and inventory
+every silent transition ([`corpus/`](corpus/scenarios.md)); each one becomes a contract
+clause that must **fail first** ([`contract/`](contract/)); the suite then measures it
+with real keystrokes in a real browser ([`suite/`](suite/)); and a committed baseline
+gates CI, so a fix can never silently regress and a new feature that ships a new silent
+transition turns a row red the day it lands. The same pass that found these numbers runs
+on every pull request — that is what turns a one-time audit into a product that *stays*
+accessible, demonstrated end-to-end on
+[a real application](https://github.com/Electro-Jam-Instruments/Open-notebook-a11y).
+
 ---
 
 # Part I — It doesn't work
