@@ -30,23 +30,30 @@ by any editor vendor.*
 Measured 2026-08 in a real browser (Chromium 141.0.7390.37, headless — **browser-told,
 not user-heard**; no screen reader in the loop), over the 24 container-centric operations
 the suite currently drives: lists, headings, blockquotes, code blocks, checklists,
-history. Each editor's denominator excludes operations it does not implement — `n/a` is
-never counted as silence. The full 218-operation corpus, read from source, is the table
-in Part I; every cell below is reproducible from
+history. All 24 were driven against every editor; an operation counts toward an editor's
+percentages only when its adapter declares every capability the operation needs (an
+undeclared checklist is `n/a`, never silence), so the denominators differ per editor.
+Note the axis: **"reaches the user" here includes information a user only finds by later
+navigation.** Part I's stricter percentages (21% / 11% / 6%, over the full 218-operation
+source-read corpus) are an *at-the-moment* axis — operations whose change is reported as
+it happens, whether by the editor or by a screen reader's own reading of correct
+structure — closest to this table's bottom row, not its top one. Every cell below is reproducible from
 [`suite/examples/report-2026-08.json`](suite/examples/report-2026-08.json).
 
 | | Open Notebook (raw `@uiw` 4.0.8) | Open Notebook (our fixes) | Lexical 0.49 (stock React) | Lexical nightly (all announcers) | Tiptap StarterKit 3.30 |
 |---|---:|---:|---:|---:|---:|
-| Operations measured | 14 | 16 | 18 | 18 | 20 |
+| Operations counted (of 24 driven) | 14 | 16 | 18 | 18 | 20 |
 | **Information reaches the user** | **14%** | **50%** | **94%** | **94%** | **95%** |
-| — through the accessibility API itself, no live region | 14% | 13% | 94% | 78% | 95% |
-| — only because the editor wrote a live region | 0% | 38%¹ | 0% | 17% | 0% |
-| **Told at the moment it happens** | **0%** | **38%**¹ | **0%** | **17%** | **0%** |
+| — silent when it happens; findable later through the API | 14% | 13% | 94% | 78% | 95% |
+| — told when it happens — in every measured case, by a live region | 0% | 38%¹ | 0% | 17% | 0% |
 
-The last two rows are identical, and that identity is a finding: **in every editor
-measured, the only channel that ever says anything *at the moment* is a live region.**
-The API rows are silent rows — the semantics are in the tree, but nothing tells the user
-until they stop and go looking.
+(The two sub-rows partition the total; they may not sum exactly due to rounding.)
+
+**No measured editor tells the user anything at the moment except through a live
+region.** That confirms, rather than discovers, what Part II argues the web platform
+makes inevitable: a live region is the only *at-the-moment* channel an author can write
+to, so everything else an editor knows sits silently in the tree until the user stops
+and goes looking.
 
 ¹ Our own fixes announce through a live region over a plaintext `<textarea>`: the user
 hears the change once, but there is no structure to return to afterwards. Real progress,
@@ -61,11 +68,11 @@ same gap (Part II), and here is where it lives, layer by layer:
 
 | Layer | What is missing | Evidence |
 |---|---|---|
-| ARIA / the web platform | Any vocabulary for **transitions**. Roles and states describe where you *are*, never what *just happened*; `ariaNotify` carries only a free-text string, so it is a built-in live region, not semantics. A semantic `kind` on it is this project's standing proposal. | [`docs/the-gap.md`](docs/the-gap.md) · [`ROADMAP.md`](ROADMAP.md) |
-| Chromium | `<pre>` maps to `generic` (the preformatted-ness is lost; `<code>` keeps its role, which Windows and Linux mappings then collapse — next rows); list item counts are absent from its CDP projection; and the only "this just happened" channel it forwards for editing semantics is live-region text. | [`docs/platform-rescue.md`](docs/platform-rescue.md) · [`docs/observing-chromium.md`](docs/observing-chromium.md) |
-| Windows / UIA | Possibly the least missing: UIA's text-attribute system (`StyleId_Quote`, list styles) *could* carry container identity without any live region — whether Chromium populates it is unverified and top of the validation list. Meanwhile the MSAA/IA2 mapping collapses the `code` role into a frame type shared with `abbr` and `time`. | [`docs/platform-apis.md`](docs/platform-apis.md) · [`docs/platform-rescue.md`](docs/platform-rescue.md) |
-| Linux / AT-SPI2 | Rich caret and text-change stream — richer than CDP for lists (item counts survive here) — but no read-only state is set, `code` collapses to a static role, and live-region events can be dropped entirely. | [`research/atspi/FINDINGS.md`](research/atspi/FINDINGS.md) · [`docs/platform-rescue.md`](docs/platform-rescue.md) |
-| Screen readers (NVDA, measured) | **No code role exists at all** — a perfectly-marked-up code block cannot be conveyed as one; editable lists lose item counts. Rescue settings (blockquote reporting) paper over some of this, per-user. | [`docs/platform-rescue.md`](docs/platform-rescue.md) |
+| ARIA / the web platform | Any vocabulary for **transitions**. Roles and states describe where you *are*, never what *just happened*; `ariaNotify` as standardised carries a free-text string plus a priority — a built-in live region, not semantics (a typed variant exists only behind a Chromium flag). A semantic `kind` on it is this project's standing proposal. | [`docs/the-gap.md`](docs/the-gap.md) · [`docs/platform-apis.md`](docs/platform-apis.md) · [`ROADMAP.md`](ROADMAP.md) |
+| Chromium | `<pre>` maps to `generic` (the preformatted-ness is lost; `<code>` keeps its role, which Windows and Linux mappings then collapse — next rows); list item counts are absent from its CDP projection (though not from its AT-SPI bridge); and for container transitions it forwards no typed "this just happened" event outside Windows — live-region text is what remains. | [`docs/platform-rescue.md`](docs/platform-rescue.md) · [`docs/observing-chromium.md`](docs/observing-chromium.md) |
+| Windows / UIA | Possibly the least missing: UIA's text-attribute system (`StyleId_Quote`, list styles) *could* carry container identity without any live region, and Chromium already fires a typed level-changed property there — but whether it populates the style ids is unverified and high on the validation list. Meanwhile the MSAA/IA2 mapping collapses the `code` role into a frame type shared with `abbr`, `emphasis` and `time`. | [`docs/platform-apis.md`](docs/platform-apis.md) · [`docs/platform-rescue.md`](docs/platform-rescue.md) |
+| Linux / AT-SPI2 | Rich caret and text-change stream — richer than CDP for lists (item counts survive here) — but the measured lists carry no read-only state, `code` collapses to a static role, and live-region events can be dropped entirely. | [`research/atspi/FINDINGS.md`](research/atspi/FINDINGS.md) · [`docs/platform-rescue.md`](docs/platform-rescue.md) |
+| Screen readers (NVDA, source-read at a pinned commit — a real session is the outstanding validation step) | **No code role exists at all** — a perfectly-marked-up code block cannot be conveyed as one; editable lists lose item counts. Rescue settings (blockquote reporting) paper over some of this, per-user. | [`docs/platform-rescue.md`](docs/platform-rescue.md) |
 
 Every one of those rows shrinks the live-region column if fixed — which is the long-term
 answer. The short-term answer is the loop this repository runs:
