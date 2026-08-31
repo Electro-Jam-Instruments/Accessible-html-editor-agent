@@ -1,0 +1,10 @@
+{"afterStep":0,"note":"page loaded, marker sanity check"}
+{"afterStep":1,"note":"tree dump -> /tmp/claude-0/-home-user-Open-notebook-a11y/0ff464b7-45e8-5b52-8804-f4027d443272/scratchpad/b1b2-run1/tree-b2.json"}
+{"afterStep":1,"note":"tree dump complete"}
+{"afterStep":2,"note":"focus #edit, caret to start of #p1"}
+{"afterStep":3,"note":"ArrowDown #1 — INTO the blockquote (#p1 -> #p2)"}
+{"afterStep":4,"note":"ArrowDown #2 — OUT of the blockquote (#p2 -> #p3)"}
+{"afterStep":5,"note":"ArrowUp #1 — back INTO the blockquote (#p3 -> #p2)"}
+{"afterStep":6,"note":"ArrowUp #2 — back OUT to #p1"}
+{"afterStep":7,"note":"drain boundary"}
+{"afterStep":8,"note":"DONE"}

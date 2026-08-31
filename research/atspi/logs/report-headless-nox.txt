@@ -1,0 +1,265 @@
+
+### step 1: page loaded, marker sanity check
+      0.3755  object:children-changed:add                   d1=0    d2=0     any={'role': 'application', 'name': 'Chromium'}  src=desktop frame('main')
+      0.3921  window:activate                               d1=0    d2=0     any='Untitled - Chromium'  src=frame('Untitled - Chromium')
+      0.4234  object:state-changed:active                   d1=1    d2=0     any='0'  src=frame('Untitled - Chromium')
+      0.4277  object:property-change:accessible-name        d1=0    d2=0     any='All Bookmarks'  src=push button('All Bookmarks')
+      0.4291  object:property-change:accessible-name        d1=0    d2=0     any='All Bookmarks'  src=static('All Bookmarks')
+      0.4326  object:property-change:accessible-name        d1=0    d2=0     any='Managed bookmarks'  src=push button('Managed bookmarks')
+      0.4397  object:property-change:accessible-name        d1=0    d2=0     any='Managed bookmarks'  src=static('Managed bookmarks')
+      0.4578  object:state-changed:defunct                  d1=1    d2=0     any='0'  src=push button('Tab groups')
+      0.4600  object:state-changed:defunct                  d1=1    d2=0     any='0'  src=<err:Error:atspi_error: The application no longer exists (0)>('<err:Error:atspi_error: The application no longer exists (0)>')
+      0.4797  object:state-changed:defunct                  d1=1    d2=0     any='0'  src=document web('')
+      0.4892  object:state-changed:defunct                  d1=1    d2=0     any='0'  src=document web('')
+      0.4909  object:state-changed:defunct                  d1=1    d2=0     any='0'  src=<err:Error:atspi_error: The application no longer exists (0)>('<err:Error:atspi_error: The application no longer exists (0)>')
+      0.4915  object:property-change:accessible-name        d1=0    d2=0     any='View site information'  src=push button('View site information')
+      0.4931  object:property-change:accessible-name        d1=0    d2=0     src=static('')
+      0.5029  object:text-changed:delete                    d1=0    d2=80    any='/home/user/Open-notebook-a11y/docs/7-DEVELOPMENT/a11y/spikes/atspi/testpage.html'  src=entry('Address and search bar')
+      0.5042  object:text-changed:insert                    d1=0    d2=11    any='about:blank'  src=entry('Address and search bar')
+      0.5052  object:property-change:accessible-name        d1=0    d2=0     src=static('')
+      0.5072  object:property-change:accessible-name        d1=0    d2=0     any='File'  src=push button('File')
+      0.5214  object:property-change:accessible-name        d1=0    d2=0     any='File'  src=static('File')
+      0.5230  object:text-changed:delete                    d1=0    d2=11    any='about:blank'  src=entry('Address and search bar')
+      0.5237  object:text-changed:insert                    d1=0    d2=80    any='/home/user/Open-notebook-a11y/docs/7-DEVELOPMENT/a11y/spikes/atspi/testpage.html'  src=entry('Address and search bar')
+      0.5244  object:property-change:accessible-name        d1=0    d2=0     any='Click to allow on file:///home/user/Open-notebook-a11y/docs/7-DEVELOPMENT/a11y/spikes/atspi/testpage.html:'  src=push button('Click to allow on file:///home/user/Open-notebook-a11y/docs/7-DEVELOPMENT/a11y/spikes/atspi/testpage.html:')
+      0.5247  object:property-change:accessible-name        d1=0    d2=0     any='local or shared file'  src=static('local or shared file')
+      0.5250  object:property-change:accessible-name        d1=0    d2=0     any='testpage.html - Chromium'  src=frame('testpage.html - Chromium')
+      0.5254  object:property-change:accessible-name        d1=0    d2=0     any='testpage.html'  src=page tab('testpage.html')
+      0.5257  object:property-change:accessible-name        d1=0    d2=0     any='testpage.html'  src=static('testpage.html')
+      0.5276  object:property-change:accessible-name        d1=0    d2=0     any='AT-SPI pillar probe - Chromium'  src=frame('AT-SPI pillar probe - Chromium')
+      0.5285  object:property-change:accessible-name        d1=0    d2=0     any='AT-SPI pillar probe'  src=page tab('AT-SPI pillar probe')
+      0.5288  object:property-change:accessible-name        d1=0    d2=0     any='AT-SPI pillar probe'  src=static('AT-SPI pillar probe')
+      0.5309  object:text-changed:insert                    d1=0    d2=7     any='ab ￼ cd'  src=#edit
+      0.5323  object:text-changed:insert                    d1=0    d2=11    any='hello world'  src=#inp
+      0.5346  object:text-changed:insert                    d1=0    d2=4     any='link'  src=link('link')
+      0.5368  object:state-changed:focused                  d1=1    d2=0     any='0'  src=document web('AT-SPI pillar probe')
+      0.5378  object:state-changed:busy                     d1=1    d2=0     any='0'  src=document web('AT-SPI pillar probe')
+      0.5383  object:state-changed:busy                     d1=0    d2=0     any='0'  src=document web('AT-SPI pillar probe')
+      0.5389  document:load-complete                        d1=0    d2=0     any='AT-SPI pillar probe'  src=document web('AT-SPI pillar probe')
+      0.6738  object:property-change:accessible-name        d1=0    d2=0     any='STEP-1'  src=#marker
+     [boundary STEP-1 observed]
+
+### step 2: P1a: focus #btn-alpha via .focus()
+      0.6807  object:state-changed:focused                  d1=0    d2=0     any='0'  src=document web('AT-SPI pillar probe')
+      0.6815  object:state-changed:focused                  d1=1    d2=0     any='0'  src=#btn-alpha
+      0.6820  object:property-change:accessible-name        d1=0    d2=0     any='STEP-2'  src=#marker
+     [boundary STEP-2 observed]
+
+### step 3: P1b: focus #btn-beta via .focus()
+      0.6981  object:state-changed:focused                  d1=0    d2=0     any='0'  src=#btn-alpha
+      0.6987  object:state-changed:focused                  d1=1    d2=0     any='0'  src=#btn-beta
+      0.6993  object:property-change:accessible-name        d1=0    d2=0     any='STEP-3'  src=#marker
+     [boundary STEP-3 observed]
+
+### step 4: P1c: real Tab keypress from #btn-beta
+      0.7144  object:state-changed:focused                  d1=0    d2=0     any='0'  src=#btn-beta
+      0.7149  object:state-changed:focused                  d1=1    d2=0     any='0'  src=#btn-toggle
+      0.7156  object:property-change:accessible-name        d1=0    d2=0     any='STEP-4'  src=#marker
+     [boundary STEP-4 observed]
+
+### step 5: P2a: aria-pressed false -> true on #btn-toggle
+      0.7306  object:property-change:accessible-name        d1=0    d2=0     any='STEP-5'  src=#marker
+     [boundary STEP-5 observed]
+
+### step 6: P2b: focus #btn-victim
+      0.7312  object:state-changed:pressed                  d1=1    d2=0     any='0'  src=#btn-toggle
+      0.7486  object:state-changed:focused                  d1=0    d2=0     any='0'  src=#btn-toggle
+      0.7492  object:state-changed:focused                  d1=1    d2=0     any='0'  src=#btn-victim
+      0.7501  object:property-change:accessible-name        d1=0    d2=0     any='STEP-6'  src=#marker
+     [boundary STEP-6 observed]
+
+### step 7: P2c: disable #btn-victim WHILE FOCUSED
+      0.7645  object:state-changed:focused                  d1=0    d2=0     any='0'  src=#btn-victim
+      0.7650  object:state-changed:focused                  d1=1    d2=0     any='0'  src=document web('AT-SPI pillar probe')
+      0.7654  object:property-change:accessible-name        d1=0    d2=0     any='STEP-7'  src=#marker
+     [boundary STEP-7 observed]
+
+### step 8: P3a: pure append to live region
+      0.7657  object:state-changed:enabled                  d1=0    d2=0     any='0'  src=#btn-victim
+      0.7659  object:state-changed:sensitive                d1=0    d2=0     any='0'  src=#btn-victim
+      0.7662  object:state-changed:read-only                d1=0    d2=0     any='0'  src=#btn-victim
+      0.9172  object:text-changed:insert                    d1=0    d2=13    any='First message'  src=section('')
+      0.9181  object:text-changed:insert                    d1=0    d2=1     any='￼'  src=#live
+      0.9187  object:property-change:accessible-name        d1=0    d2=0     any='STEP-8'  src=#marker
+     [boundary STEP-8 observed]
+
+### step 9: P3b: second pure append
+      0.9190  object:children-changed:add                   d1=0    d2=0     any={'role': 'section', 'name': '', 'tag': 'div', 'container-live': 'polite', 'atomic': 'false', 'relevant': 'additions text', 'container-atomic': 'false', 'container-relevant': 'additions text', 'display': 'block'}  src=#live
+      1.0698  object:text-changed:insert                    d1=0    d2=14    any='Second message'  src=section('')
+      1.0707  object:text-changed:insert                    d1=1    d2=1     any='￼'  src=#live
+      1.0713  object:property-change:accessible-name        d1=0    d2=0     any='STEP-9'  src=#marker
+     [boundary STEP-9 observed]
+
+### step 10: P3c: remove + insert in ONE tick (the discriminating case)
+      1.0716  object:children-changed:add                   d1=1    d2=0     any={'role': 'section', 'name': '', 'tag': 'div', 'container-live': 'polite', 'atomic': 'false', 'relevant': 'additions text', 'container-atomic': 'false', 'container-relevant': 'additions text', 'display': 'block'}  src=#live
+      1.2233  object:children-changed:remove                d1=0    d2=0     any={'role': 'section', 'name': ''}  src=#live
+      1.2243  object:text-changed:insert                    d1=0    d2=13    any='Third message'  src=section('')
+      1.2249  object:text-changed:delete                    d1=0    d2=2     any='￼￼'  src=#live
+      1.2252  object:text-changed:insert                    d1=0    d2=2     any='￼￼'  src=#live
+      1.2255  object:property-change:accessible-name        d1=0    d2=0     any='STEP-10'  src=#marker
+     [boundary STEP-10 observed]
+
+### step 11: P3d: wholesale wipe (innerHTML = "")
+      1.2258  object:children-changed:add                   d1=1    d2=0     any={'role': 'section', 'name': '', 'tag': 'div', 'container-live': 'polite', 'atomic': 'false', 'relevant': 'additions text', 'container-atomic': 'false', 'container-relevant': 'additions text', 'display': 'block'}  src=#live
+      1.3758  object:children-changed:remove                d1=1    d2=0     any={'role': 'section', 'name': ''}  src=#live
+      1.3764  object:children-changed:remove                d1=0    d2=0     any={'role': 'section', 'name': ''}  src=#live
+      1.3768  object:text-changed:delete                    d1=0    d2=2     any='￼￼'  src=#live
+      1.3771  object:property-change:accessible-name        d1=0    d2=0     any='STEP-11'  src=#marker
+     [boundary STEP-11 observed]
+
+### step 12: P4a: focus #inp (value "hello world")
+      1.3815  object:text-caret-moved                       d1=0    d2=0     any='0'  CARET=0 len=11 text='hello world'  src=#inp
+      1.3829  object:state-changed:focused                  d1=0    d2=0     any='0'  src=document web('AT-SPI pillar probe')
+      1.3831  object:state-changed:focused                  d1=1    d2=0     any='0'  src=#inp
+      1.5345  object:property-change:accessible-name        d1=0    d2=0     any='STEP-12'  src=#marker
+     [boundary STEP-12 observed]
+
+### step 13: P4b: three real ArrowRight keypresses
+      1.5478  object:text-caret-moved                       d1=3    d2=0     any='0'  CARET=3 len=11 text='hello world'  src=#inp
+      1.5493  object:property-change:accessible-name        d1=0    d2=0     any='STEP-13'  src=#marker
+     [boundary STEP-13 observed]
+
+### step 14: P4c: one real ArrowLeft keypress
+      1.5648  object:text-caret-moved                       d1=2    d2=0     any='0'  CARET=2 len=11 text='hello world'  src=#inp
+      1.5661  object:property-change:accessible-name        d1=0    d2=0     any='STEP-14'  src=#marker
+     [boundary STEP-14 observed]
+
+### step 15: P4d: setSelectionRange(7,7) programmatically
+      1.5812  object:text-caret-moved                       d1=7    d2=0     any='0'  CARET=7 len=11 text='hello world'  src=#inp
+      1.5823  object:property-change:accessible-name        d1=0    d2=0     any='STEP-15'  src=#marker
+     [boundary STEP-15 observed]
+
+### step 16: P4e: type the letter X
+      1.5981  object:text-changed:insert                    d1=7    d2=1     any='X'  src=#inp
+      1.5986  object:text-caret-moved                       d1=8    d2=0     any='0'  CARET=8 len=12 text='hello wXorld'  src=#inp
+      1.6001  object:property-change:accessible-name        d1=0    d2=0     any='STEP-16'  src=#marker
+     [boundary STEP-16 observed]
+
+### step 17: P4f: select all in the input (selection change)
+      1.6143  object:text-selection-changed                 d1=0    d2=0     src=#inp
+      1.6149  object:text-caret-moved                       d1=12   d2=0     any='0'  CARET=12 len=12 text='hello wXorld'  src=#inp
+      1.6158  object:property-change:accessible-name        d1=0    d2=0     any='STEP-17'  src=#marker
+     [boundary STEP-17 observed]
+
+### step 18: P4g: reset caret to offset 0, then ONE ArrowRight, isolated by a boundary
+      1.6312  object:text-selection-changed                 d1=0    d2=0     src=#inp
+      1.6317  object:text-caret-moved                       d1=0    d2=0     any='0'  CARET=0 len=12 text='hello wXorld'  src=#inp
+      1.6326  object:property-change:accessible-name        d1=0    d2=0     any='STEP-18'  src=#marker
+     [boundary STEP-18 observed]
+
+### step 19: P4h: ArrowRight #1 (isolated)
+      1.6480  object:text-caret-moved                       d1=1    d2=0     any='0'  CARET=1 len=12 text='hello wXorld'  src=#inp
+      1.6492  object:property-change:accessible-name        d1=0    d2=0     any='STEP-19'  src=#marker
+     [boundary STEP-19 observed]
+
+### step 20: P4i: ArrowRight #2 (isolated)
+      1.6649  object:text-caret-moved                       d1=2    d2=0     any='0'  CARET=2 len=12 text='hello wXorld'  src=#inp
+      1.6663  object:property-change:accessible-name        d1=0    d2=0     any='STEP-20'  src=#marker
+     [boundary STEP-20 observed]
+
+### step 21: P4j: ArrowRight #3 (isolated)
+      1.6812  object:text-caret-moved                       d1=3    d2=0     any='0'  CARET=3 len=12 text='hello wXorld'  src=#inp
+      1.6825  object:property-change:accessible-name        d1=0    d2=0     any='STEP-21'  src=#marker
+     [boundary STEP-21 observed]
+
+### step 22: P4k: reset to 0, then FIVE ArrowRights back-to-back (coalescing test)
+      1.6978  object:text-caret-moved                       d1=0    d2=0     any='0'  CARET=0 len=12 text='hello wXorld'  src=#inp
+      1.6992  object:property-change:accessible-name        d1=0    d2=0     any='STEP-22'  src=#marker
+     [boundary STEP-22 observed]
+
+### step 23: P4l: five rapid ArrowRights
+      1.7143  object:text-caret-moved                       d1=5    d2=0     any='0'  CARET=5 len=12 text='hello wXorld'  src=#inp
+      1.8659  object:property-change:accessible-name        d1=0    d2=0     any='STEP-23'  src=#marker
+     [boundary STEP-23 observed]
+
+### step 24: P4m: focus the contenteditable "Rich editor" (text: "ab [link] cd")
+      1.8704  object:text-caret-moved                       d1=0    d2=0     any='0'  CARET=0 len=7 text='ab ￼ cd'  src=#edit
+      1.8724  object:state-changed:focused                  d1=0    d2=0     any='0'  src=#inp
+      1.8729  object:state-changed:focused                  d1=1    d2=0     any='0'  src=#edit
+      2.0223  object:property-change:accessible-name        d1=0    d2=0     any='STEP-24'  src=#marker
+     [boundary STEP-24 observed]
+
+### step 25: P4n1: ArrowRight #1 in the rich editor (walking towards/through the link)
+      2.0308  object:text-caret-moved                       d1=1    d2=0     any='0'  CARET=1 len=7 text='ab ￼ cd'  src=#edit
+      2.0329  object:property-change:accessible-name        d1=0    d2=0     any='STEP-25'  src=#marker
+     [boundary STEP-25 observed]
+
+### step 26: P4n2: ArrowRight #2 in the rich editor (walking towards/through the link)
+      2.0479  object:text-caret-moved                       d1=2    d2=0     any='0'  CARET=2 len=7 text='ab ￼ cd'  src=#edit
+      2.0492  object:property-change:accessible-name        d1=0    d2=0     any='STEP-26'  src=#marker
+     [boundary STEP-26 observed]
+
+### step 27: P4n3: ArrowRight #3 in the rich editor (walking towards/through the link)
+      2.0643  object:text-caret-moved                       d1=3    d2=0     any='0'  CARET=3 len=7 text='ab ￼ cd'  src=#edit
+      2.0653  object:property-change:accessible-name        d1=0    d2=0     any='STEP-27'  src=#marker
+     [boundary STEP-27 observed]
+
+### step 28: P4n4: ArrowRight #4 in the rich editor (walking towards/through the link)
+      2.0808  object:text-caret-moved                       d1=1    d2=0     any='0'  CARET=1 len=4 text='link'  src=link('link')
+      2.0819  object:property-change:accessible-name        d1=0    d2=0     any='STEP-28'  src=#marker
+     [boundary STEP-28 observed]
+
+### step 29: P4n5: ArrowRight #5 in the rich editor (walking towards/through the link)
+      2.0978  object:text-caret-moved                       d1=2    d2=0     any='0'  CARET=2 len=4 text='link'  src=link('link')
+      2.0990  object:property-change:accessible-name        d1=0    d2=0     any='STEP-29'  src=#marker
+     [boundary STEP-29 observed]
+
+### step 30: P4n6: ArrowRight #6 in the rich editor (walking towards/through the link)
+      2.1140  object:text-caret-moved                       d1=3    d2=0     any='0'  CARET=3 len=4 text='link'  src=link('link')
+      2.1152  object:property-change:accessible-name        d1=0    d2=0     any='STEP-30'  src=#marker
+     [boundary STEP-30 observed]
+
+### step 31: P5a: ariaNotify feature detection
+      2.2661  object:property-change:accessible-name        d1=0    d2=0     any='STEP-31'  src=#marker
+     [boundary STEP-31 observed]
+
+### step 32: P5b: ariaNotify on document.body, default priority
+      2.4203  object:property-change:accessible-name        d1=0    d2=0     any='STEP-32'  src=#marker
+     [boundary STEP-32 observed]
+
+### step 33: P5c: ariaNotify on document.body, priority high
+      2.5730  object:property-change:accessible-name        d1=0    d2=0     any='STEP-33'  src=#marker
+     [boundary STEP-33 observed]
+
+### step 34: P5d: focus a button first, then ariaNotify on that button
+      2.5767  object:state-changed:focused                  d1=0    d2=0     any='0'  src=#edit
+      2.5771  object:state-changed:focused                  d1=1    d2=0     any='0'  src=#btn-alpha
+      2.7288  object:property-change:accessible-name        d1=0    d2=0     any='STEP-34'  src=#marker
+     [boundary STEP-34 observed]
+
+### step 35: P5e: ariaNotify on the focused button
+      2.8817  object:property-change:accessible-name        d1=0    d2=0     any='STEP-35'  src=#marker
+     [boundary STEP-35 observed]
+
+### step 36: P5f: ariaNotify on document.documentElement
+      2.8824  object:announcement                           d1=2    d2=0     any='From the focused button'  src=#btn-alpha
+      3.0342  object:property-change:accessible-name        d1=0    d2=0     any='STEP-36'  src=#marker
+     [boundary STEP-36 observed]
+
+### step 37: P5g: extra boundary, to catch any lagged announcement
+      3.1863  object:property-change:accessible-name        d1=0    d2=0     any='STEP-37'  src=#marker
+     [boundary STEP-37 observed]
+
+### step 38: P5h: role=alert element inserted after boot
+      3.3387  object:text-changed:insert                    d1=0    d2=10    any='Alert text'  src=notification('')
+      3.3398  object:property-change:accessible-name        d1=0    d2=0     any='STEP-38'  src=#marker
+     [boundary STEP-38 observed]
+
+### step 39: P5i: drain boundary after the alert
+      3.3402  object:children-changed:remove                d1=10   d2=0     any={'role': 'notification', 'name': '', 'tag': 'div', 'xml-roles': 'alert', 'container-live': 'assertive', 'live': 'assertive', 'atomic': 'true', 'relevant': 'additions text', 'container-atomic': 'true', 'container-relevant': 'additions text', 'display': 'block'}  src=document web('AT-SPI pillar probe')
+      3.3407  object:children-changed:add                   d1=10   d2=0     any={'role': 'notification', 'name': '', 'tag': 'div', 'xml-roles': 'alert', 'container-live': 'assertive', 'live': 'assertive', 'atomic': 'true', 'relevant': 'additions text', 'container-atomic': 'true', 'container-relevant': 'additions text', 'display': 'block'}  src=document web('AT-SPI pillar probe')
+      3.3412  object:children-changed:add                   d1=10   d2=0     any={'role': 'notification', 'name': '', 'tag': 'div', 'xml-roles': 'alert', 'container-live': 'assertive', 'live': 'assertive', 'atomic': 'true', 'relevant': 'additions text', 'container-atomic': 'true', 'container-relevant': 'additions text', 'display': 'block'}  src=document web('AT-SPI pillar probe')
+      3.4912  object:property-change:accessible-name        d1=0    d2=0     any='STEP-39'  src=#marker
+     [boundary STEP-39 observed]
+
+### step 40: P5j: text change INSIDE an existing role=alert (the correct pattern)
+      3.6437  object:children-changed:remove                d1=0    d2=0     any={'role': 'invalid', 'name': ''}  src=notification('')
+      3.6449  object:text-changed:delete                    d1=0    d2=10    any='Alert text'  src=notification('')
+      3.6452  object:text-changed:insert                    d1=0    d2=18    any='Alert text updated'  src=notification('')
+      3.6457  object:property-change:accessible-name        d1=0    d2=0     any='STEP-40'  src=#marker
+     [boundary STEP-40 observed]
+
+### step 41: P5k: drain boundary
+      3.6462  object:children-changed:add                   d1=0    d2=0     any={'role': 'static', 'name': 'Alert text updated', 'container-live': 'assertive', 'atomic': 'false', 'relevant': 'additions text', 'container-atomic': 'true', 'container-relevant': 'additions text'}  src=notification('')
+      3.7961  object:property-change:accessible-name        d1=0    d2=0     any='STEP-41'  src=#marker
+     [boundary STEP-41 observed]

@@ -1,0 +1,42 @@
+{"afterStep":0,"note":"page loaded, marker sanity check"}
+{"afterStep":1,"note":"P1a: focus #btn-alpha via .focus()"}
+{"afterStep":2,"note":"P1b: focus #btn-beta via .focus()"}
+{"afterStep":3,"note":"P1c: real Tab keypress from #btn-beta"}
+{"afterStep":4,"note":"P2a: aria-pressed false -> true on #btn-toggle"}
+{"afterStep":5,"note":"P2b: focus #btn-victim"}
+{"afterStep":6,"note":"P2c: disable #btn-victim WHILE FOCUSED"}
+{"afterStep":7,"note":"P3a: pure append to live region"}
+{"afterStep":8,"note":"P3b: second pure append"}
+{"afterStep":9,"note":"P3c: remove + insert in ONE tick (the discriminating case)"}
+{"afterStep":10,"note":"P3d: wholesale wipe (innerHTML = \"\")"}
+{"afterStep":11,"note":"P4a: focus #inp (value \"hello world\")"}
+{"afterStep":12,"note":"P4b: three real ArrowRight keypresses"}
+{"afterStep":13,"note":"P4c: one real ArrowLeft keypress"}
+{"afterStep":14,"note":"P4d: setSelectionRange(7,7) programmatically"}
+{"afterStep":15,"note":"P4e: type the letter X"}
+{"afterStep":16,"note":"P4f: select all in the input (selection change)"}
+{"afterStep":17,"note":"P4g: reset caret to offset 0, then ONE ArrowRight, isolated by a boundary"}
+{"afterStep":18,"note":"P4h: ArrowRight #1 (isolated)"}
+{"afterStep":19,"note":"P4i: ArrowRight #2 (isolated)"}
+{"afterStep":20,"note":"P4j: ArrowRight #3 (isolated)"}
+{"afterStep":21,"note":"P4k: reset to 0, then FIVE ArrowRights back-to-back (coalescing test)"}
+{"afterStep":22,"note":"P4l: five rapid ArrowRights"}
+{"afterStep":23,"note":"P4m: focus the contenteditable \"Rich editor\" (text: \"ab [link] cd\")"}
+{"afterStep":24,"note":"P4n1: ArrowRight #1 in the rich editor (walking towards/through the link)"}
+{"afterStep":25,"note":"P4n2: ArrowRight #2 in the rich editor (walking towards/through the link)"}
+{"afterStep":26,"note":"P4n3: ArrowRight #3 in the rich editor (walking towards/through the link)"}
+{"afterStep":27,"note":"P4n4: ArrowRight #4 in the rich editor (walking towards/through the link)"}
+{"afterStep":28,"note":"P4n5: ArrowRight #5 in the rich editor (walking towards/through the link)"}
+{"afterStep":29,"note":"P4n6: ArrowRight #6 in the rich editor (walking towards/through the link)"}
+{"afterStep":30,"note":"P5a: ariaNotify feature detection"}
+{"afterStep":31,"note":"P5b: ariaNotify on document.body, default priority"}
+{"afterStep":32,"note":"P5c: ariaNotify on document.body, priority high"}
+{"afterStep":33,"note":"P5d: focus a button first, then ariaNotify on that button"}
+{"afterStep":34,"note":"P5e: ariaNotify on the focused button"}
+{"afterStep":35,"note":"P5f: ariaNotify on document.documentElement"}
+{"afterStep":36,"note":"P5g: extra boundary, to catch any lagged announcement"}
+{"afterStep":37,"note":"P5h: role=alert element inserted after boot"}
+{"afterStep":38,"note":"P5i: drain boundary after the alert"}
+{"afterStep":39,"note":"P5j: text change INSIDE an existing role=alert (the correct pattern)"}
+{"afterStep":40,"note":"P5k: drain boundary"}
+{"afterStep":41,"note":"DONE"}

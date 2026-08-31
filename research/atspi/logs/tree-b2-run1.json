@@ -1,0 +1,333 @@
+{
+ "found": true,
+ "title_query": "B2 blockquote",
+ "tree": {
+  "role": "document web",
+  "name": "B2 blockquote crossing in an editable host",
+  "child_count": 3,
+  "states": [
+   "enabled",
+   "focusable",
+   "focused",
+   "sensitive",
+   "showing",
+   "visible"
+  ],
+  "interfaces": [
+   "Accessible",
+   "Action",
+   "Collection",
+   "Component",
+   "Document",
+   "Hypertext",
+   "Hyperlink",
+   "Text"
+  ],
+  "tag": "#document",
+  "text": "￼￼￼",
+  "children": [
+   {
+    "role": "heading",
+    "name": "B2 blockquote crossing",
+    "child_count": 1,
+    "states": [
+     "enabled",
+     "sensitive",
+     "showing",
+     "visible"
+    ],
+    "interfaces": [
+     "Accessible",
+     "Action",
+     "Collection",
+     "Component",
+     "Document",
+     "Hypertext",
+     "Hyperlink",
+     "Text"
+    ],
+    "tag": "h1",
+    "display": "block",
+    "level": "1",
+    "text": "B2 blockquote crossing",
+    "children": [
+     {
+      "role": "static",
+      "name": "B2 blockquote crossing",
+      "child_count": 0,
+      "states": [
+       "enabled",
+       "sensitive",
+       "showing",
+       "visible"
+      ],
+      "interfaces": [
+       "Accessible",
+       "Action",
+       "Collection",
+       "Component",
+       "Document",
+       "Hypertext",
+       "Text"
+      ],
+      "text": "B2 blockquote crossing"
+     }
+    ]
+   },
+   {
+    "role": "push button",
+    "name": "STEP-1",
+    "child_count": 0,
+    "states": [
+     "enabled",
+     "focusable",
+     "sensitive",
+     "showing",
+     "visible"
+    ],
+    "interfaces": [
+     "Accessible",
+     "Action",
+     "Collection",
+     "Component",
+     "Document",
+     "Hypertext",
+     "Hyperlink",
+     "Text"
+    ],
+    "id": "marker",
+    "tag": "button",
+    "display": "inline-block",
+    "text": "m"
+   },
+   {
+    "role": "section",
+    "name": "B2 host",
+    "child_count": 3,
+    "states": [
+     "editable",
+     "enabled",
+     "focusable",
+     "multi-line",
+     "selectable-text",
+     "sensitive",
+     "showing",
+     "visible"
+    ],
+    "interfaces": [
+     "Accessible",
+     "Action",
+     "Collection",
+     "Component",
+     "Document",
+     "Hypertext",
+     "Hyperlink",
+     "Text"
+    ],
+    "id": "edit",
+    "tag": "div",
+    "display": "block",
+    "text": "￼￼￼",
+    "children": [
+     {
+      "role": "paragraph",
+      "name": "",
+      "child_count": 1,
+      "states": [
+       "editable",
+       "enabled",
+       "sensitive",
+       "showing",
+       "visible"
+      ],
+      "interfaces": [
+       "Accessible",
+       "Action",
+       "Collection",
+       "Component",
+       "Document",
+       "Hypertext",
+       "Hyperlink",
+       "Text"
+      ],
+      "id": "p1",
+      "tag": "p",
+      "display": "block",
+      "text": "first paragraph",
+      "children": [
+       {
+        "role": "static",
+        "name": "first paragraph",
+        "child_count": 0,
+        "states": [
+         "editable",
+         "enabled",
+         "sensitive",
+         "showing",
+         "visible"
+        ],
+        "interfaces": [
+         "Accessible",
+         "Action",
+         "Collection",
+         "Component",
+         "Document",
+         "Hypertext",
+         "Text"
+        ],
+        "text": "first paragraph"
+       }
+      ]
+     },
+     {
+      "role": "block quote",
+      "name": "",
+      "child_count": 1,
+      "states": [
+       "editable",
+       "enabled",
+       "sensitive",
+       "showing",
+       "visible"
+      ],
+      "interfaces": [
+       "Accessible",
+       "Action",
+       "Collection",
+       "Component",
+       "Document",
+       "Hypertext",
+       "Hyperlink",
+       "Text"
+      ],
+      "id": "bq",
+      "tag": "blockquote",
+      "display": "block",
+      "text": "￼",
+      "children": [
+       {
+        "role": "paragraph",
+        "name": "",
+        "child_count": 1,
+        "states": [
+         "editable",
+         "enabled",
+         "sensitive",
+         "showing",
+         "visible"
+        ],
+        "interfaces": [
+         "Accessible",
+         "Action",
+         "Collection",
+         "Component",
+         "Document",
+         "Hypertext",
+         "Hyperlink",
+         "Text"
+        ],
+        "id": "p2",
+        "tag": "p",
+        "display": "block",
+        "text": "quoted line",
+        "children": [
+         {
+          "role": "static",
+          "name": "quoted line",
+          "child_count": 0,
+          "states": [
+           "editable",
+           "enabled",
+           "sensitive",
+           "showing",
+           "visible"
+          ],
+          "interfaces": [
+           "Accessible",
+           "Action",
+           "Collection",
+           "Component",
+           "Document",
+           "Hypertext",
+           "Text"
+          ],
+          "text": "quoted line"
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "role": "paragraph",
+      "name": "",
+      "child_count": 1,
+      "states": [
+       "editable",
+       "enabled",
+       "sensitive",
+       "showing",
+       "visible"
+      ],
+      "interfaces": [
+       "Accessible",
+       "Action",
+       "Collection",
+       "Component",
+       "Document",
+       "Hypertext",
+       "Hyperlink",
+       "Text"
+      ],
+      "id": "p3",
+      "tag": "p",
+      "display": "block",
+      "text": "last paragraph",
+      "children": [
+       {
+        "role": "static",
+        "name": "last paragraph",
+        "child_count": 0,
+        "states": [
+         "editable",
+         "enabled",
+         "sensitive",
+         "showing",
+         "visible"
+        ],
+        "interfaces": [
+         "Accessible",
+         "Action",
+         "Collection",
+         "Component",
+         "Document",
+         "Hypertext",
+         "Text"
+        ],
+        "text": "last paragraph"
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ "line_iterations": {
+  "edit": [
+   {
+    "start": 0,
+    "end": 1,
+    "content": "￼"
+   },
+   {
+    "start": 1,
+    "end": 2,
+    "content": "￼"
+   },
+   {
+    "start": 2,
+    "end": 3,
+    "content": "￼"
+   }
+  ]
+ }
+}

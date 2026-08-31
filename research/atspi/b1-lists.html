@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>B1 editable vs read-only list</title></head>
+<body>
+  <h1>B1 editable vs read-only list</h1>
+
+  <!-- sync marker: driver sets aria-label to STEP-<n>; recorder watches for it -->
+  <button id="marker" aria-label="STEP-boot">m</button>
+
+  <!-- The SAME <ul> twice: once inside a contenteditable host, once read-only. -->
+  <div id="edit" contenteditable="true" aria-label="Editable host">
+    <p id="e-before">before editable</p>
+    <ul id="e-list">
+      <li id="e-li1">alpha one</li>
+      <li id="e-li2">beta two</li>
+      <li id="e-li3">gamma three</li>
+    </ul>
+    <p id="e-after">after editable</p>
+  </div>
+
+  <div id="read">
+    <p id="r-before">before readonly</p>
+    <ul id="r-list">
+      <li id="r-li1">alpha one</li>
+      <li id="r-li2">beta two</li>
+      <li id="r-li3">gamma three</li>
+    </ul>
+    <p id="r-after">after readonly</p>
+  </div>
+
+  <script>
+    window.__mark = (n) => {
+      document.getElementById('marker').setAttribute('aria-label', 'STEP-' + n);
+    };
+    // Collapse the selection to the start of the given element's first text node.
+    window.__caretTo = (id) => {
+      const el = document.getElementById(id);
+      const r = document.createRange();
+      r.setStart(el.firstChild, 0);
+      r.collapse(true);
+      const s = getSelection();
+      s.removeAllRanges();
+      s.addRange(r);
+    };
+  </script>
+</body></html>

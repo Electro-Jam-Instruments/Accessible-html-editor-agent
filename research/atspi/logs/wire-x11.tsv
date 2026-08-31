@@ -1,0 +1,269 @@
+#type	timestamp	serial	sender	destination	path	interface	member
+#					in_reply_to
+sig	1787915153.766354	2	org.freedesktop.DBus	:1.3	/org/freedesktop/DBus	org.freedesktop.DBus	NameAcquired
+sig	1787915153.766359	4	org.freedesktop.DBus	:1.3	/org/freedesktop/DBus	org.freedesktop.DBus	NameLost
+sig	1787915153.767572	5	:1.0	<none>	/org/a11y/atspi/registry	org.a11y.atspi.Registry	EventListenerDeregistered
+mc	1787915153.818538	1	:1.4	org.freedesktop.DBus	/org/freedesktop/DBus	org.freedesktop.DBus	Hello
+mr	1787915153.819179	1	org.freedesktop.DBus	:1.4	1
+sig	1787915153.819193	7	org.freedesktop.DBus	<none>	/org/freedesktop/DBus	org.freedesktop.DBus	NameOwnerChanged
+sig	1787915153.819196	2	org.freedesktop.DBus	:1.4	/org/freedesktop/DBus	org.freedesktop.DBus	NameAcquired
+mc	1787915153.819198	2	:1.4	org.freedesktop.DBus	/org/freedesktop/DBus	org.freedesktop.DBus	AddMatch
+mc	1787915153.819200	3	:1.4	org.freedesktop.DBus	/org/freedesktop/DBus	org.freedesktop.DBus	AddMatch
+mc	1787915153.819202	4	:1.4	org.freedesktop.DBus	/org/freedesktop/DBus	org.freedesktop.DBus	AddMatch
+mc	1787915153.819204	5	:1.4	org.freedesktop.DBus	/org/freedesktop/DBus	org.freedesktop.DBus	AddMatch
+mc	1787915153.819206	6	:1.4	org.freedesktop.DBus	/org/freedesktop/DBus	org.freedesktop.DBus	AddMatch
+mc	1787915153.819208	7	:1.4	org.freedesktop.DBus	/org/freedesktop/DBus	org.freedesktop.DBus	AddMatch
+mc	1787915153.819221	8	:1.4	org.freedesktop.DBus	/org/freedesktop/DBus	org.freedesktop.DBus	AddMatch
+mr	1787915153.819223	3	org.freedesktop.DBus	:1.4	8
+mc	1787915153.819501	9	:1.4	org.a11y.atspi.Registry	/org/a11y/atspi/registry	org.a11y.atspi.Registry	RegisterEvent
+sig	1787915153.819710	6	:1.0	<none>	/org/a11y/atspi/registry	org.a11y.atspi.Registry	EventListenerRegistered
+mr	1787915153.819716	7	:1.0	:1.4	9
+mc	1787915153.819862	10	:1.4	org.freedesktop.DBus	/org/freedesktop/DBus	org.freedesktop.DBus	AddMatch
+mr	1787915153.819867	4	org.freedesktop.DBus	:1.4	10
+mc	1787915153.819939	11	:1.4	org.a11y.atspi.Registry	/org/a11y/atspi/registry	org.a11y.atspi.Registry	RegisterEvent
+sig	1787915153.820065	8	:1.0	<none>	/org/a11y/atspi/registry	org.a11y.atspi.Registry	EventListenerRegistered
+mr	1787915153.820123	9	:1.0	:1.4	11
+mc	1787915153.820228	12	:1.4	org.freedesktop.DBus	/org/freedesktop/DBus	org.freedesktop.DBus	AddMatch
+mr	1787915153.820238	5	org.freedesktop.DBus	:1.4	12
+mc	1787915153.820276	13	:1.4	org.a11y.atspi.Registry	/org/a11y/atspi/registry	org.a11y.atspi.Registry	RegisterEvent
+sig	1787915153.820392	10	:1.0	<none>	/org/a11y/atspi/registry	org.a11y.atspi.Registry	EventListenerRegistered
+mr	1787915153.820399	11	:1.0	:1.4	13
+mc	1787915153.820531	14	:1.4	org.freedesktop.DBus	/org/freedesktop/DBus	org.freedesktop.DBus	AddMatch
+mr	1787915153.820538	6	org.freedesktop.DBus	:1.4	14
+mc	1787915153.820588	15	:1.4	org.a11y.atspi.Registry	/org/a11y/atspi/registry	org.a11y.atspi.Registry	RegisterEvent
+sig	1787915153.820691	12	:1.0	<none>	/org/a11y/atspi/registry	org.a11y.atspi.Registry	EventListenerRegistered
+mr	1787915153.820742	13	:1.0	:1.4	15
+mc	1787915153.820837	16	:1.4	org.freedesktop.DBus	/org/freedesktop/DBus	org.freedesktop.DBus	AddMatch
+mr	1787915153.820842	7	org.freedesktop.DBus	:1.4	16
+mc	1787915153.820882	17	:1.4	org.a11y.atspi.Registry	/org/a11y/atspi/registry	org.a11y.atspi.Registry	RegisterEvent
+sig	1787915153.820970	14	:1.0	<none>	/org/a11y/atspi/registry	org.a11y.atspi.Registry	EventListenerRegistered
+mr	1787915153.821029	15	:1.0	:1.4	17
+mc	1787915153.821181	18	:1.4	org.freedesktop.DBus	/org/freedesktop/DBus	org.freedesktop.DBus	AddMatch
+mr	1787915153.821187	8	org.freedesktop.DBus	:1.4	18
+mc	1787915153.821231	19	:1.4	org.a11y.atspi.Registry	/org/a11y/atspi/registry	org.a11y.atspi.Registry	RegisterEvent
+sig	1787915153.821301	16	:1.0	<none>	/org/a11y/atspi/registry	org.a11y.atspi.Registry	EventListenerRegistered
+mr	1787915153.821335	17	:1.0	:1.4	19
+mc	1787915153.821428	20	:1.4	org.freedesktop.DBus	/org/freedesktop/DBus	org.freedesktop.DBus	AddMatch
+mr	1787915153.821432	9	org.freedesktop.DBus	:1.4	20
+mc	1787915153.821503	21	:1.4	org.a11y.atspi.Registry	/org/a11y/atspi/registry	org.a11y.atspi.Registry	RegisterEvent
+sig	1787915153.821572	18	:1.0	<none>	/org/a11y/atspi/registry	org.a11y.atspi.Registry	EventListenerRegistered
+mr	1787915153.821605	19	:1.0	:1.4	21
+mc	1787915153.821701	22	:1.4	org.freedesktop.DBus	/org/freedesktop/DBus	org.freedesktop.DBus	AddMatch
+mr	1787915153.821705	10	org.freedesktop.DBus	:1.4	22
+mc	1787915153.821781	23	:1.4	org.a11y.atspi.Registry	/org/a11y/atspi/registry	org.a11y.atspi.Registry	RegisterEvent
+sig	1787915153.821847	20	:1.0	<none>	/org/a11y/atspi/registry	org.a11y.atspi.Registry	EventListenerRegistered
+mr	1787915153.821882	21	:1.0	:1.4	23
+mc	1787915153.821977	24	:1.4	org.freedesktop.DBus	/org/freedesktop/DBus	org.freedesktop.DBus	AddMatch
+mr	1787915153.821981	11	org.freedesktop.DBus	:1.4	24
+mc	1787915153.822070	25	:1.4	org.a11y.atspi.Registry	/org/a11y/atspi/registry	org.a11y.atspi.Registry	RegisterEvent
+sig	1787915153.822139	22	:1.0	<none>	/org/a11y/atspi/registry	org.a11y.atspi.Registry	EventListenerRegistered
+mr	1787915153.822173	23	:1.0	:1.4	25
+mc	1787915153.822264	26	:1.4	org.freedesktop.DBus	/org/freedesktop/DBus	org.freedesktop.DBus	AddMatch
+mr	1787915153.822268	12	org.freedesktop.DBus	:1.4	26
+mc	1787915153.822337	27	:1.4	org.a11y.atspi.Registry	/org/a11y/atspi/registry	org.a11y.atspi.Registry	RegisterEvent
+sig	1787915153.822402	24	:1.0	<none>	/org/a11y/atspi/registry	org.a11y.atspi.Registry	EventListenerRegistered
+mr	1787915153.822437	25	:1.0	:1.4	27
+mc	1787915153.822525	28	:1.4	org.freedesktop.DBus	/org/freedesktop/DBus	org.freedesktop.DBus	AddMatch
+mr	1787915153.822529	13	org.freedesktop.DBus	:1.4	28
+mc	1787915153.822598	29	:1.4	org.a11y.atspi.Registry	/org/a11y/atspi/registry	org.a11y.atspi.Registry	RegisterEvent
+sig	1787915153.822666	26	:1.0	<none>	/org/a11y/atspi/registry	org.a11y.atspi.Registry	EventListenerRegistered
+mr	1787915153.822701	27	:1.0	:1.4	29
+mc	1787915153.822796	30	:1.4	org.freedesktop.DBus	/org/freedesktop/DBus	org.freedesktop.DBus	AddMatch
+mr	1787915153.822800	14	org.freedesktop.DBus	:1.4	30
+mc	1787915153.822870	31	:1.4	org.a11y.atspi.Registry	/org/a11y/atspi/registry	org.a11y.atspi.Registry	RegisterEvent
+sig	1787915153.822935	28	:1.0	<none>	/org/a11y/atspi/registry	org.a11y.atspi.Registry	EventListenerRegistered
+mr	1787915153.822970	29	:1.0	:1.4	31
+mc	1787915153.823132	32	:1.4	org.freedesktop.DBus	/org/freedesktop/DBus	org.freedesktop.DBus	AddMatch
+mr	1787915153.823139	15	org.freedesktop.DBus	:1.4	32
+mc	1787915153.823252	33	:1.4	org.a11y.atspi.Registry	/org/a11y/atspi/registry	org.a11y.atspi.Registry	RegisterEvent
+sig	1787915153.823360	30	:1.0	<none>	/org/a11y/atspi/registry	org.a11y.atspi.Registry	EventListenerRegistered
+mr	1787915153.823374	31	:1.0	:1.4	33
+mc	1787915153.823511	34	:1.4	org.freedesktop.DBus	/org/freedesktop/DBus	org.freedesktop.DBus	AddMatch
+mr	1787915153.823517	16	org.freedesktop.DBus	:1.4	34
+mc	1787915153.823615	35	:1.4	org.a11y.atspi.Registry	/org/a11y/atspi/registry	org.a11y.atspi.Registry	RegisterEvent
+sig	1787915153.823705	32	:1.0	<none>	/org/a11y/atspi/registry	org.a11y.atspi.Registry	EventListenerRegistered
+mr	1787915153.823718	33	:1.0	:1.4	35
+mc	1787915154.230713	1	:1.5	org.freedesktop.DBus	/org/freedesktop/DBus	org.freedesktop.DBus	Hello
+mr	1787915154.230728	1	org.freedesktop.DBus	:1.5	1
+sig	1787915154.230730	17	org.freedesktop.DBus	<none>	/org/freedesktop/DBus	org.freedesktop.DBus	NameOwnerChanged
+sig	1787915154.230733	2	org.freedesktop.DBus	:1.5	/org/freedesktop/DBus	org.freedesktop.DBus	NameAcquired
+mc	1787915154.235194	2	:1.5	org.freedesktop.DBus	/org/freedesktop/DBus	org.freedesktop.DBus	AddMatch
+mc	1787915154.235211	3	:1.5	org.freedesktop.DBus	/org/freedesktop/DBus	org.freedesktop.DBus	AddMatch
+mc	1787915154.235215	4	:1.5	org.freedesktop.DBus	/org/freedesktop/DBus	org.freedesktop.DBus	AddMatch
+mc	1787915154.351676	5	:1.5	org.a11y.atspi.Registry	/org/a11y/atspi/accessible/root	org.a11y.atspi.Socket	Embed
+sig	1787915154.352765	34	:1.0	<none>	/org/a11y/atspi/accessible/root	org.a11y.atspi.Event.Object	ChildrenChanged
+mc	1787915154.352808	35	:1.0	:1.5	/org/a11y/atspi/accessible/root	org.freedesktop.DBus.Properties	Set
+mr	1787915154.352837	36	:1.0	:1.5	5
+mc	1787915154.352911	36	:1.4	:1.0	/org/a11y/atspi/accessible/root	org.a11y.atspi.Application	GetApplicationBusAddress
+mc	1787915154.352936	37	:1.4	org.a11y.atspi.Registry	/org/a11y/atspi/accessible/root	org.a11y.atspi.Application	GetApplicationBusAddress
+mc	1787915154.352985	38	:1.4	org.a11y.atspi.Registry	/org/a11y/atspi/accessible/root	org.a11y.atspi.Accessible	GetChildren
+mr	1787915154.353017	6	:1.5	:1.0	35
+err	1787915154.353051	37	:1.0	:1.4	36
+err	1787915154.353097	38	:1.0	:1.4	37
+mr	1787915154.353134	39	:1.0	:1.4	38
+mc	1787915154.354810	7	:1.5	org.a11y.atspi.Registry	/org/a11y/atspi/registry	org.a11y.atspi.Registry	GetRegisteredEvents
+mc	1787915154.354820	8	:1.5	org.a11y.atspi.Registry	/org/a11y/atspi/registry/deviceeventcontroller	org.a11y.atspi.DeviceEventController	GetKeystrokeListeners
+mc	1787915154.354822	39	:1.4	:1.5	/org/a11y/atspi/accessible/root	org.a11y.atspi.Application	GetApplicationBusAddress
+mc	1787915154.354824	40	:1.4	:1.5	/org/a11y/atspi/accessible/root	org.a11y.atspi.Accessible	GetRole
+mr	1787915154.354914	40	:1.0	:1.5	7
+mr	1787915154.354918	41	:1.0	:1.5	8
+sig	1787915154.357877	9	:1.5	<none>	/org/a11y/atspi/accessible/1	org.a11y.atspi.Event.Window	Activate
+sig	1787915154.357888	10	:1.5	<none>	/org/a11y/atspi/accessible/1	org.a11y.atspi.Event.Object	StateChanged
+mc	1787915154.363158	11	:1.5	org.freedesktop.DBus	/org/freedesktop/DBus	org.freedesktop.DBus	AddMatch
+mr	1787915154.363589	12	:1.5	:1.4	39
+mr	1787915154.364570	13	:1.5	:1.4	40
+mc	1787915154.364759	41	:1.4	:1.5	/org/a11y/atspi/accessible/root	org.freedesktop.DBus.Properties	Get
+mr	1787915154.365013	14	:1.5	:1.4	41
+mc	1787915154.365019	42	:1.4	:1.5	/org/a11y/atspi/accessible/root	org.a11y.atspi.Accessible	GetAttributes
+mr	1787915154.366901	15	:1.5	:1.4	42
+mc	1787915154.367291	43	:1.4	:1.0	/org/a11y/atspi/accessible/root	org.a11y.atspi.Accessible	GetRole
+mr	1787915154.367383	42	:1.0	:1.4	43
+mc	1787915154.367613	44	:1.4	:1.0	/org/a11y/atspi/accessible/root	org.freedesktop.DBus.Properties	Get
+mr	1787915154.367706	43	:1.0	:1.4	44
+mc	1787915154.367785	45	:1.4	:1.0	/org/a11y/atspi/accessible/root	org.a11y.atspi.Accessible	GetAttributes
+mr	1787915154.368284	44	:1.0	:1.4	45
+mc	1787915154.368290	46	:1.4	:1.0	/org/a11y/atspi/cache	org.a11y.atspi.Cache	GetItems
+mc	1787915154.368292	47	:1.4	org.a11y.atspi.Registry	/org/a11y/atspi/cache	org.a11y.atspi.Cache	GetItems
+mr	1787915154.368379	45	:1.0	:1.4	46
+mr	1787915154.368401	46	:1.0	:1.4	47
+sig	1787915154.391658	16	:1.5	<none>	/org/a11y/atspi/accessible/42	org.a11y.atspi.Event.Object	PropertyChange
+sig	1787915154.395210	17	:1.5	<none>	/org/a11y/atspi/accessible/222	org.a11y.atspi.Event.Object	PropertyChange
+sig	1787915154.395219	18	:1.5	<none>	/org/a11y/atspi/accessible/38	org.a11y.atspi.Event.Object	PropertyChange
+sig	1787915154.395221	19	:1.5	<none>	/org/a11y/atspi/accessible/223	org.a11y.atspi.Event.Object	PropertyChange
+sig	1787915154.411312	20	:1.5	<none>	/org/a11y/atspi/cache	org.a11y.atspi.Cache	RemoveAccessible
+sig	1787915154.442271	21	:1.5	<none>	/org/a11y/atspi/accessible/90	org.a11y.atspi.Event.Object	StateChanged
+sig	1787915154.442357	22	:1.5	<none>	/org/a11y/atspi/cache	org.a11y.atspi.Cache	RemoveAccessible
+sig	1787915154.442915	23	:1.5	<none>	/org/a11y/atspi/accessible/126	org.a11y.atspi.Event.Object	PropertyChange
+sig	1787915154.445889	24	:1.5	<none>	/org/a11y/atspi/accessible/224	org.a11y.atspi.Event.Object	PropertyChange
+sig	1787915154.445900	25	:1.5	<none>	/org/a11y/atspi/accessible/127	org.a11y.atspi.Event.Object	TextChanged
+sig	1787915154.445903	26	:1.5	<none>	/org/a11y/atspi/accessible/127	org.a11y.atspi.Event.Object	TextChanged
+sig	1787915154.445905	27	:1.5	<none>	/org/a11y/atspi/accessible/159	org.a11y.atspi.Event.Object	PropertyChange
+sig	1787915154.445907	28	:1.5	<none>	/org/a11y/atspi/accessible/126	org.a11y.atspi.Event.Object	PropertyChange
+sig	1787915154.445909	29	:1.5	<none>	/org/a11y/atspi/accessible/224	org.a11y.atspi.Event.Object	PropertyChange
+sig	1787915154.445911	30	:1.5	<none>	/org/a11y/atspi/accessible/127	org.a11y.atspi.Event.Object	TextChanged
+sig	1787915154.445919	31	:1.5	<none>	/org/a11y/atspi/accessible/127	org.a11y.atspi.Event.Object	TextChanged
+sig	1787915154.446797	32	:1.5	<none>	/org/a11y/atspi/accessible/152	org.a11y.atspi.Event.Object	PropertyChange
+sig	1787915154.447120	33	:1.5	<none>	/org/a11y/atspi/accessible/159	org.a11y.atspi.Event.Object	PropertyChange
+sig	1787915154.447360	34	:1.5	<none>	/org/a11y/atspi/accessible/1	org.a11y.atspi.Event.Object	PropertyChange
+sig	1787915154.447449	35	:1.5	<none>	/org/a11y/atspi/accessible/115	org.a11y.atspi.Event.Object	PropertyChange
+sig	1787915154.447832	36	:1.5	<none>	/org/a11y/atspi/accessible/225	org.a11y.atspi.Event.Object	PropertyChange
+sig	1787915154.452682	37	:1.5	<none>	/org/a11y/atspi/accessible/1	org.a11y.atspi.Event.Object	PropertyChange
+sig	1787915154.473516	38	:1.5	<none>	/org/a11y/atspi/accessible/115	org.a11y.atspi.Event.Object	PropertyChange
+sig	1787915154.473531	39	:1.5	<none>	/org/a11y/atspi/accessible/225	org.a11y.atspi.Event.Object	PropertyChange
+sig	1787915154.479470	40	:1.5	<none>	/org/a11y/atspi/accessible/226	org.a11y.atspi.Event.Object	TextChanged
+sig	1787915154.479488	41	:1.5	<none>	/org/a11y/atspi/accessible/227	org.a11y.atspi.Event.Object	TextChanged
+sig	1787915154.479490	42	:1.5	<none>	/org/a11y/atspi/accessible/228	org.a11y.atspi.Event.Object	TextChanged
+sig	1787915154.479492	43	:1.5	<none>	/org/a11y/atspi/accessible/229	org.a11y.atspi.Event.Object	StateChanged
+sig	1787915154.479494	44	:1.5	<none>	/org/a11y/atspi/accessible/229	org.a11y.atspi.Event.Object	StateChanged
+sig	1787915154.479496	45	:1.5	<none>	/org/a11y/atspi/accessible/229	org.a11y.atspi.Event.Object	StateChanged
+sig	1787915154.479499	46	:1.5	<none>	/org/a11y/atspi/accessible/229	org.a11y.atspi.Event.Document	LoadComplete
+sig	1787915154.629747	47	:1.5	<none>	/org/a11y/atspi/accessible/230	org.a11y.atspi.Event.Object	PropertyChange
+sig	1787915154.644978	48	:1.5	<none>	/org/a11y/atspi/accessible/229	org.a11y.atspi.Event.Object	StateChanged
+sig	1787915154.644995	49	:1.5	<none>	/org/a11y/atspi/accessible/231	org.a11y.atspi.Event.Object	StateChanged
+sig	1787915154.644997	50	:1.5	<none>	/org/a11y/atspi/accessible/230	org.a11y.atspi.Event.Object	PropertyChange
+sig	1787915154.661985	51	:1.5	<none>	/org/a11y/atspi/accessible/231	org.a11y.atspi.Event.Object	StateChanged
+sig	1787915154.662001	52	:1.5	<none>	/org/a11y/atspi/accessible/232	org.a11y.atspi.Event.Object	StateChanged
+sig	1787915154.662003	53	:1.5	<none>	/org/a11y/atspi/accessible/230	org.a11y.atspi.Event.Object	PropertyChange
+sig	1787915154.678589	54	:1.5	<none>	/org/a11y/atspi/accessible/232	org.a11y.atspi.Event.Object	StateChanged
+sig	1787915154.678662	55	:1.5	<none>	/org/a11y/atspi/accessible/233	org.a11y.atspi.Event.Object	StateChanged
+sig	1787915154.678666	56	:1.5	<none>	/org/a11y/atspi/accessible/230	org.a11y.atspi.Event.Object	PropertyChange
+sig	1787915154.695100	57	:1.5	<none>	/org/a11y/atspi/accessible/230	org.a11y.atspi.Event.Object	PropertyChange
+sig	1787915154.695116	58	:1.5	<none>	/org/a11y/atspi/accessible/233	org.a11y.atspi.Event.Object	StateChanged
+sig	1787915154.711825	59	:1.5	<none>	/org/a11y/atspi/accessible/233	org.a11y.atspi.Event.Object	StateChanged
+sig	1787915154.712024	60	:1.5	<none>	/org/a11y/atspi/accessible/234	org.a11y.atspi.Event.Object	StateChanged
+sig	1787915154.712068	61	:1.5	<none>	/org/a11y/atspi/accessible/230	org.a11y.atspi.Event.Object	PropertyChange
+sig	1787915154.728055	62	:1.5	<none>	/org/a11y/atspi/accessible/234	org.a11y.atspi.Event.Object	StateChanged
+sig	1787915154.728071	63	:1.5	<none>	/org/a11y/atspi/accessible/229	org.a11y.atspi.Event.Object	StateChanged
+sig	1787915154.728073	64	:1.5	<none>	/org/a11y/atspi/accessible/230	org.a11y.atspi.Event.Object	PropertyChange
+sig	1787915154.728075	65	:1.5	<none>	/org/a11y/atspi/accessible/234	org.a11y.atspi.Event.Object	StateChanged
+sig	1787915154.728077	66	:1.5	<none>	/org/a11y/atspi/accessible/234	org.a11y.atspi.Event.Object	StateChanged
+sig	1787915154.728079	67	:1.5	<none>	/org/a11y/atspi/accessible/234	org.a11y.atspi.Event.Object	StateChanged
+sig	1787915154.880491	68	:1.5	<none>	/org/a11y/atspi/accessible/235	org.a11y.atspi.Event.Object	TextChanged
+sig	1787915154.880523	69	:1.5	<none>	/org/a11y/atspi/accessible/236	org.a11y.atspi.Event.Object	TextChanged
+sig	1787915154.880526	70	:1.5	<none>	/org/a11y/atspi/accessible/230	org.a11y.atspi.Event.Object	PropertyChange
+sig	1787915154.880528	71	:1.5	<none>	/org/a11y/atspi/accessible/235	org.a11y.atspi.Event.Object	ChildrenChanged
+sig	1787915155.032865	72	:1.5	<none>	/org/a11y/atspi/accessible/235	org.a11y.atspi.Event.Object	TextChanged
+sig	1787915155.032918	73	:1.5	<none>	/org/a11y/atspi/accessible/237	org.a11y.atspi.Event.Object	TextChanged
+sig	1787915155.032922	74	:1.5	<none>	/org/a11y/atspi/accessible/230	org.a11y.atspi.Event.Object	PropertyChange
+sig	1787915155.032924	75	:1.5	<none>	/org/a11y/atspi/accessible/235	org.a11y.atspi.Event.Object	ChildrenChanged
+sig	1787915155.185546	76	:1.5	<none>	/org/a11y/atspi/accessible/235	org.a11y.atspi.Event.Object	ChildrenChanged
+sig	1787915155.185602	77	:1.5	<none>	/org/a11y/atspi/accessible/235	org.a11y.atspi.Event.Object	TextChanged
+sig	1787915155.185606	78	:1.5	<none>	/org/a11y/atspi/accessible/235	org.a11y.atspi.Event.Object	TextChanged
+sig	1787915155.185632	79	:1.5	<none>	/org/a11y/atspi/accessible/238	org.a11y.atspi.Event.Object	TextChanged
+sig	1787915155.185701	80	:1.5	<none>	/org/a11y/atspi/accessible/230	org.a11y.atspi.Event.Object	PropertyChange
+sig	1787915155.185713	81	:1.5	<none>	/org/a11y/atspi/accessible/235	org.a11y.atspi.Event.Object	ChildrenChanged
+sig	1787915155.337747	82	:1.5	<none>	/org/a11y/atspi/accessible/235	org.a11y.atspi.Event.Object	ChildrenChanged
+sig	1787915155.337772	83	:1.5	<none>	/org/a11y/atspi/accessible/235	org.a11y.atspi.Event.Object	ChildrenChanged
+sig	1787915155.337783	84	:1.5	<none>	/org/a11y/atspi/accessible/235	org.a11y.atspi.Event.Object	TextChanged
+sig	1787915155.337928	85	:1.5	<none>	/org/a11y/atspi/accessible/230	org.a11y.atspi.Event.Object	PropertyChange
+sig	1787915155.345613	86	:1.5	<none>	/org/a11y/atspi/accessible/227	org.a11y.atspi.Event.Object	TextCaretMoved
+sig	1787915155.345641	87	:1.5	<none>	/org/a11y/atspi/accessible/229	org.a11y.atspi.Event.Object	StateChanged
+sig	1787915155.345644	88	:1.5	<none>	/org/a11y/atspi/accessible/227	org.a11y.atspi.Event.Object	StateChanged
+sig	1787915155.497865	89	:1.5	<none>	/org/a11y/atspi/accessible/230	org.a11y.atspi.Event.Object	PropertyChange
+sig	1787915155.511366	90	:1.5	<none>	/org/a11y/atspi/accessible/227	org.a11y.atspi.Event.Object	TextCaretMoved
+sig	1787915155.511386	91	:1.5	<none>	/org/a11y/atspi/accessible/230	org.a11y.atspi.Event.Object	PropertyChange
+sig	1787915155.529247	92	:1.5	<none>	/org/a11y/atspi/accessible/227	org.a11y.atspi.Event.Object	TextCaretMoved
+sig	1787915155.529266	93	:1.5	<none>	/org/a11y/atspi/accessible/230	org.a11y.atspi.Event.Object	PropertyChange
+sig	1787915155.545063	94	:1.5	<none>	/org/a11y/atspi/accessible/227	org.a11y.atspi.Event.Object	TextCaretMoved
+sig	1787915155.545079	95	:1.5	<none>	/org/a11y/atspi/accessible/230	org.a11y.atspi.Event.Object	PropertyChange
+sig	1787915155.562994	96	:1.5	<none>	/org/a11y/atspi/accessible/227	org.a11y.atspi.Event.Object	TextChanged
+sig	1787915155.563013	97	:1.5	<none>	/org/a11y/atspi/accessible/227	org.a11y.atspi.Event.Object	TextCaretMoved
+sig	1787915155.563016	98	:1.5	<none>	/org/a11y/atspi/accessible/230	org.a11y.atspi.Event.Object	PropertyChange
+sig	1787915155.578978	99	:1.5	<none>	/org/a11y/atspi/accessible/227	org.a11y.atspi.Event.Object	TextSelectionChanged
+sig	1787915155.579004	100	:1.5	<none>	/org/a11y/atspi/accessible/227	org.a11y.atspi.Event.Object	TextCaretMoved
+sig	1787915155.579008	101	:1.5	<none>	/org/a11y/atspi/accessible/230	org.a11y.atspi.Event.Object	PropertyChange
+sig	1787915155.596021	102	:1.5	<none>	/org/a11y/atspi/accessible/227	org.a11y.atspi.Event.Object	TextSelectionChanged
+sig	1787915155.596045	103	:1.5	<none>	/org/a11y/atspi/accessible/227	org.a11y.atspi.Event.Object	TextCaretMoved
+sig	1787915155.596173	104	:1.5	<none>	/org/a11y/atspi/accessible/230	org.a11y.atspi.Event.Object	PropertyChange
+sig	1787915155.612314	105	:1.5	<none>	/org/a11y/atspi/accessible/227	org.a11y.atspi.Event.Object	TextCaretMoved
+sig	1787915155.612394	106	:1.5	<none>	/org/a11y/atspi/accessible/230	org.a11y.atspi.Event.Object	PropertyChange
+sig	1787915155.628088	107	:1.5	<none>	/org/a11y/atspi/accessible/227	org.a11y.atspi.Event.Object	TextCaretMoved
+sig	1787915155.628107	108	:1.5	<none>	/org/a11y/atspi/accessible/230	org.a11y.atspi.Event.Object	PropertyChange
+sig	1787915155.644576	109	:1.5	<none>	/org/a11y/atspi/accessible/227	org.a11y.atspi.Event.Object	TextCaretMoved
+sig	1787915155.644592	110	:1.5	<none>	/org/a11y/atspi/accessible/230	org.a11y.atspi.Event.Object	PropertyChange
+sig	1787915155.662084	111	:1.5	<none>	/org/a11y/atspi/accessible/227	org.a11y.atspi.Event.Object	TextCaretMoved
+sig	1787915155.662128	112	:1.5	<none>	/org/a11y/atspi/accessible/230	org.a11y.atspi.Event.Object	PropertyChange
+sig	1787915155.678766	113	:1.5	<none>	/org/a11y/atspi/accessible/227	org.a11y.atspi.Event.Object	TextCaretMoved
+sig	1787915155.678904	114	:1.5	<none>	/org/a11y/atspi/accessible/230	org.a11y.atspi.Event.Object	PropertyChange
+sig	1787915155.683140	115	:1.5	<none>	/org/a11y/atspi/accessible/228	org.a11y.atspi.Event.Object	TextCaretMoved
+sig	1787915155.683154	116	:1.5	<none>	/org/a11y/atspi/accessible/227	org.a11y.atspi.Event.Object	StateChanged
+sig	1787915155.683156	117	:1.5	<none>	/org/a11y/atspi/accessible/228	org.a11y.atspi.Event.Object	StateChanged
+sig	1787915155.835558	118	:1.5	<none>	/org/a11y/atspi/accessible/230	org.a11y.atspi.Event.Object	PropertyChange
+sig	1787915155.844721	119	:1.5	<none>	/org/a11y/atspi/accessible/228	org.a11y.atspi.Event.Object	TextCaretMoved
+sig	1787915155.844737	120	:1.5	<none>	/org/a11y/atspi/accessible/230	org.a11y.atspi.Event.Object	PropertyChange
+sig	1787915155.861553	121	:1.5	<none>	/org/a11y/atspi/accessible/228	org.a11y.atspi.Event.Object	TextCaretMoved
+sig	1787915155.861577	122	:1.5	<none>	/org/a11y/atspi/accessible/230	org.a11y.atspi.Event.Object	PropertyChange
+sig	1787915155.878647	123	:1.5	<none>	/org/a11y/atspi/accessible/228	org.a11y.atspi.Event.Object	TextCaretMoved
+sig	1787915155.878793	124	:1.5	<none>	/org/a11y/atspi/accessible/230	org.a11y.atspi.Event.Object	PropertyChange
+sig	1787915155.895551	125	:1.5	<none>	/org/a11y/atspi/accessible/226	org.a11y.atspi.Event.Object	TextCaretMoved
+sig	1787915155.895701	126	:1.5	<none>	/org/a11y/atspi/accessible/230	org.a11y.atspi.Event.Object	PropertyChange
+sig	1787915155.912334	127	:1.5	<none>	/org/a11y/atspi/accessible/226	org.a11y.atspi.Event.Object	TextCaretMoved
+sig	1787915155.912354	128	:1.5	<none>	/org/a11y/atspi/accessible/230	org.a11y.atspi.Event.Object	PropertyChange
+sig	1787915155.928699	129	:1.5	<none>	/org/a11y/atspi/accessible/226	org.a11y.atspi.Event.Object	TextCaretMoved
+sig	1787915155.928716	130	:1.5	<none>	/org/a11y/atspi/accessible/230	org.a11y.atspi.Event.Object	PropertyChange
+sig	1787915156.081103	131	:1.5	<none>	/org/a11y/atspi/accessible/230	org.a11y.atspi.Event.Object	PropertyChange
+sig	1787915156.233579	132	:1.5	<none>	/org/a11y/atspi/accessible/230	org.a11y.atspi.Event.Object	PropertyChange
+sig	1787915156.385506	133	:1.5	<none>	/org/a11y/atspi/accessible/230	org.a11y.atspi.Event.Object	PropertyChange
+sig	1787915156.388835	134	:1.5	<none>	/org/a11y/atspi/accessible/228	org.a11y.atspi.Event.Object	StateChanged
+sig	1787915156.388849	135	:1.5	<none>	/org/a11y/atspi/accessible/231	org.a11y.atspi.Event.Object	StateChanged
+sig	1787915156.540845	136	:1.5	<none>	/org/a11y/atspi/accessible/230	org.a11y.atspi.Event.Object	PropertyChange
+sig	1787915156.693033	137	:1.5	<none>	/org/a11y/atspi/accessible/230	org.a11y.atspi.Event.Object	PropertyChange
+sig	1787915156.693057	138	:1.5	<none>	/org/a11y/atspi/accessible/231	org.a11y.atspi.Event.Object	Announcement
+sig	1787915156.846142	139	:1.5	<none>	/org/a11y/atspi/accessible/230	org.a11y.atspi.Event.Object	PropertyChange
+sig	1787915156.998470	140	:1.5	<none>	/org/a11y/atspi/accessible/230	org.a11y.atspi.Event.Object	PropertyChange
+sig	1787915157.151303	141	:1.5	<none>	/org/a11y/atspi/accessible/239	org.a11y.atspi.Event.Object	TextChanged
+sig	1787915157.151356	142	:1.5	<none>	/org/a11y/atspi/accessible/230	org.a11y.atspi.Event.Object	PropertyChange
+sig	1787915157.151360	143	:1.5	<none>	/org/a11y/atspi/accessible/229	org.a11y.atspi.Event.Object	ChildrenChanged
+sig	1787915157.151385	144	:1.5	<none>	/org/a11y/atspi/accessible/229	org.a11y.atspi.Event.Object	ChildrenChanged
+sig	1787915157.151388	145	:1.5	<none>	/org/a11y/atspi/accessible/229	org.a11y.atspi.Event.Object	ChildrenChanged
+sig	1787915157.303982	146	:1.5	<none>	/org/a11y/atspi/accessible/230	org.a11y.atspi.Event.Object	PropertyChange
+sig	1787915157.456569	147	:1.5	<none>	/org/a11y/atspi/accessible/239	org.a11y.atspi.Event.Object	ChildrenChanged
+sig	1787915157.456594	148	:1.5	<none>	/org/a11y/atspi/accessible/239	org.a11y.atspi.Event.Object	TextChanged
+sig	1787915157.456611	149	:1.5	<none>	/org/a11y/atspi/accessible/239	org.a11y.atspi.Event.Object	TextChanged
+sig	1787915157.456718	150	:1.5	<none>	/org/a11y/atspi/accessible/230	org.a11y.atspi.Event.Object	PropertyChange
+sig	1787915157.456737	151	:1.5	<none>	/org/a11y/atspi/accessible/239	org.a11y.atspi.Event.Object	ChildrenChanged
+sig	1787915157.608983	152	:1.5	<none>	/org/a11y/atspi/accessible/230	org.a11y.atspi.Event.Object	PropertyChange
+sig	1787915157.624698	153	:1.5	<none>	/org/a11y/atspi/cache	org.a11y.atspi.Cache	RemoveAccessible
+sig	1787915157.624714	154	:1.5	<none>	/org/a11y/atspi/cache	org.a11y.atspi.Cache	RemoveAccessible
+sig	1787915157.624716	155	:1.5	<none>	/org/a11y/atspi/cache	org.a11y.atspi.Cache	RemoveAccessible
+sig	1787915157.624718	156	:1.5	<none>	/org/a11y/atspi/cache	org.a11y.atspi.Cache	RemoveAccessible

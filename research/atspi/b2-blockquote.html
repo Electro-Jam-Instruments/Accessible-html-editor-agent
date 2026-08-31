@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>B2 blockquote crossing in an editable host</title></head>
+<body>
+  <h1>B2 blockquote crossing</h1>
+
+  <!-- sync marker: driver sets aria-label to STEP-<n>; recorder watches for it -->
+  <button id="marker" aria-label="STEP-boot">m</button>
+
+  <div id="edit" contenteditable="true" aria-label="B2 host">
+    <p id="p1">first paragraph</p>
+    <blockquote id="bq"><p id="p2">quoted line</p></blockquote>
+    <p id="p3">last paragraph</p>
+  </div>
+
+  <script>
+    window.__mark = (n) => {
+      document.getElementById('marker').setAttribute('aria-label', 'STEP-' + n);
+    };
+    window.__caretTo = (id) => {
+      const el = document.getElementById(id);
+      const r = document.createRange();
+      r.setStart(el.firstChild, 0);
+      r.collapse(true);
+      const s = getSelection();
+      s.removeAllRanges();
+      s.addRange(r);
+    };
+  </script>
+</body></html>

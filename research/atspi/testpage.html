@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>AT-SPI pillar probe</title></head>
+<body>
+  <h1>AT-SPI pillar probe</h1>
+
+  <!-- sync marker: driver sets aria-label to STEP-<n>; recorder watches for it -->
+  <button id="marker" aria-label="STEP-boot">m</button>
+
+  <!-- pillar 1: focus -->
+  <button id="btn-alpha">Alpha</button>
+  <button id="btn-beta">Beta</button>
+
+  <!-- pillar 2: control state -->
+  <button id="btn-toggle" aria-pressed="false">Toggle Mute</button>
+  <button id="btn-victim">Victim</button>
+
+  <!-- pillar 3: live region (mounted empty at boot, on purpose) -->
+  <div id="live" aria-live="polite" aria-atomic="false"></div>
+
+  <!-- pillar 4: caret -->
+  <label for="inp">Notes</label>
+  <input id="inp" type="text" value="hello world">
+  <div id="edit" contenteditable="true" role="textbox" aria-label="Rich editor">ab <a href="#x">link</a> cd</div>
+
+  <script>
+    window.__mark = (n) => {
+      document.getElementById('marker').setAttribute('aria-label', 'STEP-' + n);
+    };
+  </script>
+</body></html>

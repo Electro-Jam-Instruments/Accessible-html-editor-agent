@@ -1,0 +1,908 @@
+{
+ "found": true,
+ "title_query": "B1 editable",
+ "tree": {
+  "role": "document web",
+  "name": "B1 editable vs read-only list",
+  "child_count": 4,
+  "states": [
+   "enabled",
+   "focusable",
+   "focused",
+   "sensitive",
+   "showing",
+   "visible"
+  ],
+  "interfaces": [
+   "Accessible",
+   "Action",
+   "Collection",
+   "Component",
+   "Document",
+   "Hypertext",
+   "Hyperlink",
+   "Text"
+  ],
+  "tag": "#document",
+  "text": "￼￼￼￼",
+  "children": [
+   {
+    "role": "heading",
+    "name": "B1 editable vs read-only list",
+    "child_count": 1,
+    "states": [
+     "enabled",
+     "sensitive",
+     "showing",
+     "visible"
+    ],
+    "interfaces": [
+     "Accessible",
+     "Action",
+     "Collection",
+     "Component",
+     "Document",
+     "Hypertext",
+     "Hyperlink",
+     "Text"
+    ],
+    "tag": "h1",
+    "display": "block",
+    "level": "1",
+    "text": "B1 editable vs read-only list",
+    "children": [
+     {
+      "role": "static",
+      "name": "B1 editable vs read-only list",
+      "child_count": 0,
+      "states": [
+       "enabled",
+       "sensitive",
+       "showing",
+       "visible"
+      ],
+      "interfaces": [
+       "Accessible",
+       "Action",
+       "Collection",
+       "Component",
+       "Document",
+       "Hypertext",
+       "Text"
+      ],
+      "text": "B1 editable vs read-only list"
+     }
+    ]
+   },
+   {
+    "role": "push button",
+    "name": "STEP-1",
+    "child_count": 0,
+    "states": [
+     "enabled",
+     "focusable",
+     "sensitive",
+     "showing",
+     "visible"
+    ],
+    "interfaces": [
+     "Accessible",
+     "Action",
+     "Collection",
+     "Component",
+     "Document",
+     "Hypertext",
+     "Hyperlink",
+     "Text"
+    ],
+    "id": "marker",
+    "tag": "button",
+    "display": "inline-block",
+    "text": "m"
+   },
+   {
+    "role": "section",
+    "name": "Editable host",
+    "child_count": 3,
+    "states": [
+     "editable",
+     "enabled",
+     "focusable",
+     "multi-line",
+     "selectable-text",
+     "sensitive",
+     "showing",
+     "visible"
+    ],
+    "interfaces": [
+     "Accessible",
+     "Action",
+     "Collection",
+     "Component",
+     "Document",
+     "Hypertext",
+     "Hyperlink",
+     "Text"
+    ],
+    "id": "edit",
+    "tag": "div",
+    "display": "block",
+    "text": "￼￼￼",
+    "children": [
+     {
+      "role": "paragraph",
+      "name": "",
+      "child_count": 1,
+      "states": [
+       "editable",
+       "enabled",
+       "sensitive",
+       "showing",
+       "visible"
+      ],
+      "interfaces": [
+       "Accessible",
+       "Action",
+       "Collection",
+       "Component",
+       "Document",
+       "Hypertext",
+       "Hyperlink",
+       "Text"
+      ],
+      "id": "e-before",
+      "tag": "p",
+      "display": "block",
+      "text": "before editable",
+      "children": [
+       {
+        "role": "static",
+        "name": "before editable",
+        "child_count": 0,
+        "states": [
+         "editable",
+         "enabled",
+         "sensitive",
+         "showing",
+         "visible"
+        ],
+        "interfaces": [
+         "Accessible",
+         "Action",
+         "Collection",
+         "Component",
+         "Document",
+         "Hypertext",
+         "Text"
+        ],
+        "text": "before editable"
+       }
+      ]
+     },
+     {
+      "role": "list",
+      "name": "",
+      "child_count": 3,
+      "states": [
+       "editable",
+       "enabled",
+       "sensitive",
+       "showing",
+       "visible"
+      ],
+      "interfaces": [
+       "Accessible",
+       "Action",
+       "Collection",
+       "Component",
+       "Document",
+       "Hypertext",
+       "Hyperlink",
+       "Text"
+      ],
+      "id": "e-list",
+      "tag": "ul",
+      "display": "block",
+      "setsize": "3",
+      "text": "￼￼￼",
+      "children": [
+       {
+        "role": "list item",
+        "name": "",
+        "child_count": 2,
+        "states": [
+         "editable",
+         "enabled",
+         "sensitive",
+         "showing",
+         "visible"
+        ],
+        "interfaces": [
+         "Accessible",
+         "Action",
+         "Collection",
+         "Component",
+         "Document",
+         "Hypertext",
+         "Hyperlink",
+         "Text"
+        ],
+        "id": "e-li1",
+        "tag": "li",
+        "display": "list-item",
+        "level": "1",
+        "posinset": "1",
+        "setsize": "3",
+        "text": "• alpha one",
+        "children": [
+         {
+          "role": "static",
+          "name": "• ",
+          "child_count": 0,
+          "states": [
+           "enabled",
+           "sensitive",
+           "showing",
+           "visible"
+          ],
+          "interfaces": [
+           "Accessible",
+           "Action",
+           "Collection",
+           "Component",
+           "Document",
+           "Hypertext",
+           "Hyperlink",
+           "Text"
+          ],
+          "tag": "::marker",
+          "display": "inline-block",
+          "text": "• "
+         },
+         {
+          "role": "static",
+          "name": "alpha one",
+          "child_count": 0,
+          "states": [
+           "editable",
+           "enabled",
+           "sensitive",
+           "showing",
+           "visible"
+          ],
+          "interfaces": [
+           "Accessible",
+           "Action",
+           "Collection",
+           "Component",
+           "Document",
+           "Hypertext",
+           "Text"
+          ],
+          "text": "alpha one"
+         }
+        ]
+       },
+       {
+        "role": "list item",
+        "name": "",
+        "child_count": 2,
+        "states": [
+         "editable",
+         "enabled",
+         "sensitive",
+         "showing",
+         "visible"
+        ],
+        "interfaces": [
+         "Accessible",
+         "Action",
+         "Collection",
+         "Component",
+         "Document",
+         "Hypertext",
+         "Hyperlink",
+         "Text"
+        ],
+        "id": "e-li2",
+        "tag": "li",
+        "display": "list-item",
+        "level": "1",
+        "posinset": "2",
+        "setsize": "3",
+        "text": "• beta two",
+        "children": [
+         {
+          "role": "static",
+          "name": "• ",
+          "child_count": 0,
+          "states": [
+           "enabled",
+           "sensitive",
+           "showing",
+           "visible"
+          ],
+          "interfaces": [
+           "Accessible",
+           "Action",
+           "Collection",
+           "Component",
+           "Document",
+           "Hypertext",
+           "Hyperlink",
+           "Text"
+          ],
+          "tag": "::marker",
+          "display": "inline-block",
+          "text": "• "
+         },
+         {
+          "role": "static",
+          "name": "beta two",
+          "child_count": 0,
+          "states": [
+           "editable",
+           "enabled",
+           "sensitive",
+           "showing",
+           "visible"
+          ],
+          "interfaces": [
+           "Accessible",
+           "Action",
+           "Collection",
+           "Component",
+           "Document",
+           "Hypertext",
+           "Text"
+          ],
+          "text": "beta two"
+         }
+        ]
+       },
+       {
+        "role": "list item",
+        "name": "",
+        "child_count": 2,
+        "states": [
+         "editable",
+         "enabled",
+         "sensitive",
+         "showing",
+         "visible"
+        ],
+        "interfaces": [
+         "Accessible",
+         "Action",
+         "Collection",
+         "Component",
+         "Document",
+         "Hypertext",
+         "Hyperlink",
+         "Text"
+        ],
+        "id": "e-li3",
+        "tag": "li",
+        "display": "list-item",
+        "level": "1",
+        "posinset": "3",
+        "setsize": "3",
+        "text": "• gamma three",
+        "children": [
+         {
+          "role": "static",
+          "name": "• ",
+          "child_count": 0,
+          "states": [
+           "enabled",
+           "sensitive",
+           "showing",
+           "visible"
+          ],
+          "interfaces": [
+           "Accessible",
+           "Action",
+           "Collection",
+           "Component",
+           "Document",
+           "Hypertext",
+           "Hyperlink",
+           "Text"
+          ],
+          "tag": "::marker",
+          "display": "inline-block",
+          "text": "• "
+         },
+         {
+          "role": "static",
+          "name": "gamma three",
+          "child_count": 0,
+          "states": [
+           "editable",
+           "enabled",
+           "sensitive",
+           "showing",
+           "visible"
+          ],
+          "interfaces": [
+           "Accessible",
+           "Action",
+           "Collection",
+           "Component",
+           "Document",
+           "Hypertext",
+           "Text"
+          ],
+          "text": "gamma three"
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "role": "paragraph",
+      "name": "",
+      "child_count": 1,
+      "states": [
+       "editable",
+       "enabled",
+       "sensitive",
+       "showing",
+       "visible"
+      ],
+      "interfaces": [
+       "Accessible",
+       "Action",
+       "Collection",
+       "Component",
+       "Document",
+       "Hypertext",
+       "Hyperlink",
+       "Text"
+      ],
+      "id": "e-after",
+      "tag": "p",
+      "display": "block",
+      "text": "after editable",
+      "children": [
+       {
+        "role": "static",
+        "name": "after editable",
+        "child_count": 0,
+        "states": [
+         "editable",
+         "enabled",
+         "sensitive",
+         "showing",
+         "visible"
+        ],
+        "interfaces": [
+         "Accessible",
+         "Action",
+         "Collection",
+         "Component",
+         "Document",
+         "Hypertext",
+         "Text"
+        ],
+        "text": "after editable"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "role": "section",
+    "name": "",
+    "child_count": 3,
+    "states": [
+     "enabled",
+     "sensitive",
+     "showing",
+     "visible"
+    ],
+    "interfaces": [
+     "Accessible",
+     "Action",
+     "Collection",
+     "Component",
+     "Document",
+     "Hypertext",
+     "Hyperlink",
+     "Text"
+    ],
+    "id": "read",
+    "tag": "div",
+    "display": "block",
+    "text": "￼￼￼",
+    "children": [
+     {
+      "role": "paragraph",
+      "name": "",
+      "child_count": 1,
+      "states": [
+       "enabled",
+       "sensitive",
+       "showing",
+       "visible"
+      ],
+      "interfaces": [
+       "Accessible",
+       "Action",
+       "Collection",
+       "Component",
+       "Document",
+       "Hypertext",
+       "Hyperlink",
+       "Text"
+      ],
+      "id": "r-before",
+      "tag": "p",
+      "display": "block",
+      "text": "before readonly",
+      "children": [
+       {
+        "role": "static",
+        "name": "before readonly",
+        "child_count": 0,
+        "states": [
+         "enabled",
+         "sensitive",
+         "showing",
+         "visible"
+        ],
+        "interfaces": [
+         "Accessible",
+         "Action",
+         "Collection",
+         "Component",
+         "Document",
+         "Hypertext",
+         "Text"
+        ],
+        "text": "before readonly"
+       }
+      ]
+     },
+     {
+      "role": "list",
+      "name": "",
+      "child_count": 3,
+      "states": [
+       "enabled",
+       "sensitive",
+       "showing",
+       "visible"
+      ],
+      "interfaces": [
+       "Accessible",
+       "Action",
+       "Collection",
+       "Component",
+       "Document",
+       "Hypertext",
+       "Hyperlink",
+       "Text"
+      ],
+      "id": "r-list",
+      "tag": "ul",
+      "display": "block",
+      "setsize": "3",
+      "text": "￼￼￼",
+      "children": [
+       {
+        "role": "list item",
+        "name": "",
+        "child_count": 2,
+        "states": [
+         "enabled",
+         "sensitive",
+         "showing",
+         "visible"
+        ],
+        "interfaces": [
+         "Accessible",
+         "Action",
+         "Collection",
+         "Component",
+         "Document",
+         "Hypertext",
+         "Hyperlink",
+         "Text"
+        ],
+        "id": "r-li1",
+        "tag": "li",
+        "display": "list-item",
+        "level": "1",
+        "posinset": "1",
+        "setsize": "3",
+        "text": "• alpha one",
+        "children": [
+         {
+          "role": "static",
+          "name": "• ",
+          "child_count": 0,
+          "states": [
+           "enabled",
+           "sensitive",
+           "showing",
+           "visible"
+          ],
+          "interfaces": [
+           "Accessible",
+           "Action",
+           "Collection",
+           "Component",
+           "Document",
+           "Hypertext",
+           "Hyperlink",
+           "Text"
+          ],
+          "tag": "::marker",
+          "display": "inline-block",
+          "text": "• "
+         },
+         {
+          "role": "static",
+          "name": "alpha one",
+          "child_count": 0,
+          "states": [
+           "enabled",
+           "sensitive",
+           "showing",
+           "visible"
+          ],
+          "interfaces": [
+           "Accessible",
+           "Action",
+           "Collection",
+           "Component",
+           "Document",
+           "Hypertext",
+           "Text"
+          ],
+          "text": "alpha one"
+         }
+        ]
+       },
+       {
+        "role": "list item",
+        "name": "",
+        "child_count": 2,
+        "states": [
+         "enabled",
+         "sensitive",
+         "showing",
+         "visible"
+        ],
+        "interfaces": [
+         "Accessible",
+         "Action",
+         "Collection",
+         "Component",
+         "Document",
+         "Hypertext",
+         "Hyperlink",
+         "Text"
+        ],
+        "id": "r-li2",
+        "tag": "li",
+        "display": "list-item",
+        "level": "1",
+        "posinset": "2",
+        "setsize": "3",
+        "text": "• beta two",
+        "children": [
+         {
+          "role": "static",
+          "name": "• ",
+          "child_count": 0,
+          "states": [
+           "enabled",
+           "sensitive",
+           "showing",
+           "visible"
+          ],
+          "interfaces": [
+           "Accessible",
+           "Action",
+           "Collection",
+           "Component",
+           "Document",
+           "Hypertext",
+           "Hyperlink",
+           "Text"
+          ],
+          "tag": "::marker",
+          "display": "inline-block",
+          "text": "• "
+         },
+         {
+          "role": "static",
+          "name": "beta two",
+          "child_count": 0,
+          "states": [
+           "enabled",
+           "sensitive",
+           "showing",
+           "visible"
+          ],
+          "interfaces": [
+           "Accessible",
+           "Action",
+           "Collection",
+           "Component",
+           "Document",
+           "Hypertext",
+           "Text"
+          ],
+          "text": "beta two"
+         }
+        ]
+       },
+       {
+        "role": "list item",
+        "name": "",
+        "child_count": 2,
+        "states": [
+         "enabled",
+         "sensitive",
+         "showing",
+         "visible"
+        ],
+        "interfaces": [
+         "Accessible",
+         "Action",
+         "Collection",
+         "Component",
+         "Document",
+         "Hypertext",
+         "Hyperlink",
+         "Text"
+        ],
+        "id": "r-li3",
+        "tag": "li",
+        "display": "list-item",
+        "level": "1",
+        "posinset": "3",
+        "setsize": "3",
+        "text": "• gamma three",
+        "children": [
+         {
+          "role": "static",
+          "name": "• ",
+          "child_count": 0,
+          "states": [
+           "enabled",
+           "sensitive",
+           "showing",
+           "visible"
+          ],
+          "interfaces": [
+           "Accessible",
+           "Action",
+           "Collection",
+           "Component",
+           "Document",
+           "Hypertext",
+           "Hyperlink",
+           "Text"
+          ],
+          "tag": "::marker",
+          "display": "inline-block",
+          "text": "• "
+         },
+         {
+          "role": "static",
+          "name": "gamma three",
+          "child_count": 0,
+          "states": [
+           "enabled",
+           "sensitive",
+           "showing",
+           "visible"
+          ],
+          "interfaces": [
+           "Accessible",
+           "Action",
+           "Collection",
+           "Component",
+           "Document",
+           "Hypertext",
+           "Text"
+          ],
+          "text": "gamma three"
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "role": "paragraph",
+      "name": "",
+      "child_count": 1,
+      "states": [
+       "enabled",
+       "sensitive",
+       "showing",
+       "visible"
+      ],
+      "interfaces": [
+       "Accessible",
+       "Action",
+       "Collection",
+       "Component",
+       "Document",
+       "Hypertext",
+       "Hyperlink",
+       "Text"
+      ],
+      "id": "r-after",
+      "tag": "p",
+      "display": "block",
+      "text": "after readonly",
+      "children": [
+       {
+        "role": "static",
+        "name": "after readonly",
+        "child_count": 0,
+        "states": [
+         "enabled",
+         "sensitive",
+         "showing",
+         "visible"
+        ],
+        "interfaces": [
+         "Accessible",
+         "Action",
+         "Collection",
+         "Component",
+         "Document",
+         "Hypertext",
+         "Text"
+        ],
+        "text": "after readonly"
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ "line_iterations": {
+  "edit": [
+   {
+    "start": 0,
+    "end": 1,
+    "content": "￼"
+   },
+   {
+    "start": 1,
+    "end": 2,
+    "content": "￼"
+   },
+   {
+    "start": 2,
+    "end": 3,
+    "content": "￼"
+   }
+  ],
+  "read": [
+   {
+    "start": 0,
+    "end": 1,
+    "content": "￼"
+   },
+   {
+    "start": 1,
+    "end": 2,
+    "content": "￼"
+   },
+   {
+    "start": 2,
+    "end": 3,
+    "content": "￼"
+   }
+  ]
+ }
+}

@@ -1,0 +1,147 @@
+
+### step 1: page loaded, marker sanity check
+      0.2352  object:children-changed:add               d1=0   d2=0    any={'role': 'application', 'name': 'Chromium'}  src=desktop frame('main')
+      0.2441  window:activate                           d1=0   d2=0    any='Untitled - Chromium'  src=frame('Untitled - Chromium')
+      0.2510  object:state-changed:active               d1=1   d2=0    any='0'  src=frame('Untitled - Chromium')
+      0.2717  object:property-change:accessible-name    d1=0   d2=0    any='All Bookmarks'  src=push button('All Bookmarks')
+      0.2757  object:property-change:accessible-name    d1=0   d2=0    any='All Bookmarks'  src=static('All Bookmarks')
+      0.2769  object:property-change:accessible-name    d1=0   d2=0    any='Managed bookmarks'  src=push button('Managed bookmarks')
+      0.2772  object:property-change:accessible-name    d1=0   d2=0    any='Managed bookmarks'  src=static('Managed bookmarks')
+      0.3125  object:property-change:accessible-name    d1=0   d2=0    any='View site information'  src=push button('View site information')
+      0.3133  object:property-change:accessible-name    d1=0   d2=0    src=static('')
+      0.3139  object:text-changed:delete                d1=0   d2=80   any='/home/user/Open-notebook-a11y/docs/7-DEVELOPMENT/a11y/spikes/atspi/b1-lists.html'  src=entry('Address and search bar')
+      0.3142  object:text-changed:insert                d1=0   d2=11   any='about:blank'  src=entry('Address and search bar')
+      0.3145  object:property-change:accessible-name    d1=0   d2=0    src=static('')
+      0.3151  object:property-change:accessible-name    d1=0   d2=0    any='File'  src=push button('File')
+      0.3160  object:property-change:accessible-name    d1=0   d2=0    any='File'  src=static('File')
+      0.3182  object:text-changed:delete                d1=0   d2=11   any='about:blank'  src=entry('Address and search bar')
+      0.3190  object:text-changed:insert                d1=0   d2=80   any='/home/user/Open-notebook-a11y/docs/7-DEVELOPMENT/a11y/spikes/atspi/b1-lists.html'  src=entry('Address and search bar')
+      0.3213  object:property-change:accessible-name    d1=0   d2=0    any='Click to allow on file:///home/user/Open-notebook-a11y/docs/7-DEVELOPMENT/a11y/spikes/atspi/b1-lists.html:'  src=push button('Click to allow on file:///home/user/Open-notebook-a11y/docs/7-DEVELOPMENT/a11y/spikes/atspi/b1-lists.html:')
+      0.3219  object:property-change:accessible-name    d1=0   d2=0    any='local or shared file'  src=static('local or shared file')
+      0.3222  object:property-change:accessible-name    d1=0   d2=0    any='b1-lists.html - Chromium'  src=frame('b1-lists.html - Chromium')
+      0.3226  object:property-change:accessible-name    d1=0   d2=0    any='b1-lists.html'  src=page tab('b1-lists.html')
+      0.3233  object:property-change:accessible-name    d1=0   d2=0    any='b1-lists.html'  src=static('b1-lists.html')
+      0.3280  object:property-change:accessible-name    d1=0   d2=0    any='B1 editable vs read-only list - Chromium'  src=frame('B1 editable vs read-only list - Chromium')
+      0.3319  object:property-change:accessible-name    d1=0   d2=0    any='B1 editable vs read-only list'  src=page tab('B1 editable vs read-only list')
+      0.3321  object:property-change:accessible-name    d1=0   d2=0    any='B1 editable vs read-only list'  src=static('B1 editable vs read-only list')
+      0.3324  object:text-changed:insert                d1=0   d2=13   any='• gamma three'  src=#e-li3
+      0.3326  object:text-changed:insert                d1=0   d2=3    any='￼￼￼'  src=#e-list
+      0.3328  object:text-changed:insert                d1=0   d2=11   any='• alpha one'  src=#e-li1
+      0.3330  object:text-changed:insert                d1=0   d2=3    any='￼￼￼'  src=#edit
+      0.3331  object:text-changed:insert                d1=0   d2=10   any='• beta two'  src=#e-li2
+      0.3337  object:text-changed:insert                d1=0   d2=15   any='before editable'  src=#e-before
+      0.3339  object:text-changed:insert                d1=0   d2=14   any='after editable'  src=#e-after
+      0.3340  object:state-changed:focused              d1=1   d2=0    any='0'  src=document web('B1 editable vs read-only list')
+      0.3341  object:state-changed:busy                 d1=1   d2=0    any='0'  src=document web('B1 editable vs read-only list')
+      0.3343  object:state-changed:busy                 d1=0   d2=0    any='0'  src=document web('B1 editable vs read-only list')
+      0.3343  document:load-complete                    d1=0   d2=0    any='B1 editable vs read-only list'  src=document web('B1 editable vs read-only list')
+      0.4772  object:property-change:accessible-name    d1=0   d2=0    any='STEP-1'  src=#marker
+     [boundary STEP-1 observed]
+
+### step 2: tree dump complete
+      0.6285  object:property-change:accessible-name    d1=0   d2=0    any='STEP-2'  src=#marker
+     [boundary STEP-2 observed]
+
+### step 3: EDITABLE: focus #edit, caret to start of #e-before
+      0.6393  object:text-caret-moved                   d1=0   d2=0    any='0'  src=#e-before
+         CARET=0 len=15 text='before editable'
+         src role=paragraph states=editable,enabled,sensitive,showing,visible
+         ancestors: #edit > document web
+      0.6415  object:state-changed:focused              d1=0   d2=0    any='0'  src=document web('B1 editable vs read-only list')
+      0.6418  object:state-changed:focused              d1=1   d2=0    any='0'  src=#edit
+      0.6420  object:property-change:accessible-name    d1=0   d2=0    any='STEP-3'  src=#marker
+     [boundary STEP-3 observed]
+
+### step 4: EDITABLE: ArrowDown #1 — into #e-li1 (list entry)
+      0.6539  object:text-caret-moved                   d1=2   d2=0    any='0'  src=#e-li1
+         CARET=2 len=11 text='• alpha one'
+         src role=list item states=editable,enabled,sensitive,showing,visible
+         ancestors: #e-list > #edit > document web
+      0.6550  object:property-change:accessible-name    d1=0   d2=0    any='STEP-4'  src=#marker
+     [boundary STEP-4 observed]
+
+### step 5: EDITABLE: ArrowDown #2 — into #e-li2
+      0.6706  object:text-caret-moved                   d1=2   d2=0    any='0'  src=#e-li2
+         CARET=2 len=10 text='• beta two'
+         src role=list item states=editable,enabled,sensitive,showing,visible
+         ancestors: #e-list > #edit > document web
+      0.6717  object:property-change:accessible-name    d1=0   d2=0    any='STEP-5'  src=#marker
+     [boundary STEP-5 observed]
+
+### step 6: EDITABLE: ArrowDown #3 — into #e-li3
+      0.6871  object:text-caret-moved                   d1=2   d2=0    any='0'  src=#e-li3
+         CARET=2 len=13 text='• gamma three'
+         src role=list item states=editable,enabled,sensitive,showing,visible
+         ancestors: #e-list > #edit > document web
+      0.6879  object:property-change:accessible-name    d1=0   d2=0    any='STEP-6'  src=#marker
+     [boundary STEP-6 observed]
+
+### step 7: EDITABLE: ArrowDown #4 — into #e-after (list exit)
+      0.7036  object:text-caret-moved                   d1=0   d2=0    any='0'  src=#e-after
+         CARET=0 len=14 text='after editable'
+         src role=paragraph states=editable,enabled,sensitive,showing,visible
+         ancestors: #edit > document web
+      0.7044  object:property-change:accessible-name    d1=0   d2=0    any='STEP-7'  src=#marker
+     [boundary STEP-7 observed]
+
+### step 8: EDITABLE: two ArrowRights inside #e-after (control: within-line motion)
+      0.7203  object:text-caret-moved                   d1=1   d2=0    any='0'  src=#e-after
+         CARET=1 len=14 text='after editable'
+         src role=paragraph states=editable,enabled,sensitive,showing,visible
+         ancestors: #edit > document web
+      0.7213  object:property-change:accessible-name    d1=0   d2=0    any='STEP-8'  src=#marker
+     [boundary STEP-8 observed]
+
+### step 9: (boot)
+      0.7371  object:text-caret-moved                   d1=2   d2=0    any='0'  src=#e-after
+         CARET=2 len=14 text='after editable'
+         src role=paragraph states=editable,enabled,sensitive,showing,visible
+         ancestors: #edit > document web
+      0.7378  object:property-change:accessible-name    d1=0   d2=0    any='STEP-9'  src=#marker
+     [boundary STEP-9 observed]
+
+### step 10: READ-ONLY: blur #edit, collapse selection to start of #r-before (caret browsing is on)
+      0.7536  object:state-changed:focused              d1=0   d2=0    any='0'  src=#edit
+      0.7538  object:state-changed:focused              d1=1   d2=0    any='0'  src=document web('B1 editable vs read-only list')
+      0.7540  object:text-caret-moved                   d1=0   d2=0    any='0'  src=#r-before
+         CARET=0 len=15 text='before readonly'
+         src role=paragraph states=enabled,sensitive,showing,visible
+         ancestors: #read > document web
+      0.7549  object:property-change:accessible-name    d1=0   d2=0    any='STEP-10'  src=#marker
+     [boundary STEP-10 observed]
+
+### step 11: READ-ONLY: ArrowDown #1 — into #r-li1 (list entry)
+      0.7703  object:text-caret-moved                   d1=2   d2=0    any='0'  src=#r-li1
+         CARET=2 len=11 text='• alpha one'
+         src role=list item states=enabled,sensitive,showing,visible
+         ancestors: #r-list > #read > document web
+      0.7716  object:property-change:accessible-name    d1=0   d2=0    any='STEP-11'  src=#marker
+     [boundary STEP-11 observed]
+
+### step 12: READ-ONLY: ArrowDown #2 — into #r-li2
+      0.7871  object:text-caret-moved                   d1=2   d2=0    any='0'  src=#r-li2
+         CARET=2 len=10 text='• beta two'
+         src role=list item states=enabled,sensitive,showing,visible
+         ancestors: #r-list > #read > document web
+      0.7881  object:property-change:accessible-name    d1=0   d2=0    any='STEP-12'  src=#marker
+     [boundary STEP-12 observed]
+
+### step 13: READ-ONLY: ArrowDown #3 — into #r-li3
+      0.8039  object:text-caret-moved                   d1=2   d2=0    any='0'  src=#r-li3
+         CARET=2 len=13 text='• gamma three'
+         src role=list item states=enabled,sensitive,showing,visible
+         ancestors: #r-list > #read > document web
+      0.8049  object:property-change:accessible-name    d1=0   d2=0    any='STEP-13'  src=#marker
+     [boundary STEP-13 observed]
+
+### step 14: READ-ONLY: ArrowDown #4 — into #r-after (list exit)
+      0.8204  object:text-caret-moved                   d1=0   d2=0    any='0'  src=#r-after
+         CARET=0 len=14 text='after readonly'
+         src role=paragraph states=enabled,sensitive,showing,visible
+         ancestors: #read > document web
+      0.8215  object:property-change:accessible-name    d1=0   d2=0    any='STEP-14'  src=#marker
+     [boundary STEP-14 observed]
+
+### step 15: drain boundary
+      0.9717  object:property-change:accessible-name    d1=0   d2=0    any='STEP-15'  src=#marker
+     [boundary STEP-15 observed]

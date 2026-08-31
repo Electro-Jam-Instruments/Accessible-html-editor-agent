@@ -1,0 +1,16 @@
+{"afterStep":0,"note":"page loaded, marker sanity check"}
+{"afterStep":1,"note":"tree dump -> /tmp/claude-0/-home-user-Open-notebook-a11y/0ff464b7-45e8-5b52-8804-f4027d443272/scratchpad/b1b2-run2/tree-b1.json"}
+{"afterStep":1,"note":"tree dump complete"}
+{"afterStep":2,"note":"EDITABLE: focus #edit, caret to start of #e-before"}
+{"afterStep":3,"note":"EDITABLE: ArrowDown #1 — into #e-li1 (list entry)"}
+{"afterStep":4,"note":"EDITABLE: ArrowDown #2 — into #e-li2"}
+{"afterStep":5,"note":"EDITABLE: ArrowDown #3 — into #e-li3"}
+{"afterStep":6,"note":"EDITABLE: ArrowDown #4 — into #e-after (list exit)"}
+{"afterStep":7,"note":"EDITABLE: two ArrowRights inside #e-after (control: within-line motion)"}
+{"afterStep":9,"note":"READ-ONLY: blur #edit, collapse selection to start of #r-before (caret browsing is on)"}
+{"afterStep":10,"note":"READ-ONLY: ArrowDown #1 — into #r-li1 (list entry)"}
+{"afterStep":11,"note":"READ-ONLY: ArrowDown #2 — into #r-li2"}
+{"afterStep":12,"note":"READ-ONLY: ArrowDown #3 — into #r-li3"}
+{"afterStep":13,"note":"READ-ONLY: ArrowDown #4 — into #r-after (list exit)"}
+{"afterStep":14,"note":"drain boundary"}
+{"afterStep":15,"note":"DONE"}

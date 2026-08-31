@@ -1,0 +1,8 @@
+{
+  "manifest_version": 3,
+  "name": "AX Event Recorder",
+  "version": "1.0",
+  "description": "Records chrome.automation generated events",
+  "permissions": ["automation"],
+  "background": { "service_worker": "sw.js" }
+}

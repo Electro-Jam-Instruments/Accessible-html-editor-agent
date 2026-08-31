@@ -1,0 +1,93 @@
+
+### step 1: page loaded, marker sanity check
+      0.2310  object:children-changed:add               d1=0   d2=0    any={'role': 'application', 'name': 'Chromium'}  src=desktop frame('main')
+      0.2390  window:activate                           d1=0   d2=0    any='Untitled - Chromium'  src=frame('Untitled - Chromium')
+      0.2482  object:state-changed:active               d1=1   d2=0    any='0'  src=frame('Untitled - Chromium')
+      0.2634  object:property-change:accessible-name    d1=0   d2=0    any='All Bookmarks'  src=push button('All Bookmarks')
+      0.2646  object:property-change:accessible-name    d1=0   d2=0    any='All Bookmarks'  src=static('All Bookmarks')
+      0.2665  object:property-change:accessible-name    d1=0   d2=0    any='Managed bookmarks'  src=push button('Managed bookmarks')
+      0.2678  object:property-change:accessible-name    d1=0   d2=0    any='Managed bookmarks'  src=static('Managed bookmarks')
+      0.3109  object:property-change:accessible-name    d1=0   d2=0    any='View site information'  src=push button('View site information')
+      0.3144  object:property-change:accessible-name    d1=0   d2=0    src=static('')
+      0.3156  object:text-changed:delete                d1=0   d2=85   any='/home/user/Open-notebook-a11y/docs/7-DEVELOPMENT/a11y/spikes/atspi/b2-blockquote.html'  src=entry('Address and search bar')
+      0.3160  object:text-changed:insert                d1=0   d2=11   any='about:blank'  src=entry('Address and search bar')
+      0.3177  object:property-change:accessible-name    d1=0   d2=0    src=static('')
+      0.3185  object:property-change:accessible-name    d1=0   d2=0    any='File'  src=push button('File')
+      0.3193  object:property-change:accessible-name    d1=0   d2=0    any='File'  src=static('File')
+      0.3205  object:text-changed:delete                d1=0   d2=11   any='about:blank'  src=entry('Address and search bar')
+      0.3278  object:text-changed:insert                d1=0   d2=85   any='/home/user/Open-notebook-a11y/docs/7-DEVELOPMENT/a11y/spikes/atspi/b2-blockquote.html'  src=entry('Address and search bar')
+      0.3287  object:property-change:accessible-name    d1=0   d2=0    any='Click to allow on file:///home/user/Open-notebook-a11y/docs/7-DEVELOPMENT/a11y/spikes/atspi/b2-blockquote.html:'  src=push button('Click to allow on file:///home/user/Open-notebook-a11y/docs/7-DEVELOPMENT/a11y/spikes/atspi/b2-blockquote.html:')
+      0.3291  object:property-change:accessible-name    d1=0   d2=0    any='local or shared file'  src=static('local or shared file')
+      0.3305  object:property-change:accessible-name    d1=0   d2=0    any='b2-blockquote.html - Chromium'  src=frame('b2-blockquote.html - Chromium')
+      0.3308  object:property-change:accessible-name    d1=0   d2=0    any='b2-blockquote.html'  src=page tab('b2-blockquote.html')
+      0.3311  object:property-change:accessible-name    d1=0   d2=0    any='b2-blockquote.html'  src=static('b2-blockquote.html')
+      0.3324  object:property-change:accessible-name    d1=0   d2=0    any='B2 blockquote crossing in an editable host - Chromium'  src=frame('B2 blockquote crossing in an editable host - Chromium')
+      0.3327  object:property-change:accessible-name    d1=0   d2=0    any='B2 blockquote crossing in an editable host'  src=page tab('B2 blockquote crossing in an editable host')
+      0.3331  object:property-change:accessible-name    d1=0   d2=0    any='B2 blockquote crossing in an editable host'  src=static('B2 blockquote crossing in an editable host')
+      0.3335  object:text-changed:insert                d1=0   d2=15   any='first paragraph'  src=#p1
+      0.3340  object:text-changed:insert                d1=0   d2=3    any='￼￼￼'  src=#edit
+      0.3344  object:text-changed:insert                d1=0   d2=14   any='last paragraph'  src=#p3
+      0.3351  object:text-changed:insert                d1=0   d2=1    any='￼'  src=#bq
+      0.3357  object:text-changed:insert                d1=0   d2=11   any='quoted line'  src=#p2
+      0.3361  object:state-changed:focused              d1=1   d2=0    any='0'  src=document web('B2 blockquote crossing in an editable host')
+      0.3364  object:state-changed:busy                 d1=1   d2=0    any='0'  src=document web('B2 blockquote crossing in an editable host')
+      0.3365  object:state-changed:busy                 d1=0   d2=0    any='0'  src=document web('B2 blockquote crossing in an editable host')
+      0.3370  document:load-complete                    d1=0   d2=0    any='B2 blockquote crossing in an editable host'  src=document web('B2 blockquote crossing in an editable host')
+      0.4658  object:property-change:accessible-name    d1=0   d2=0    any='STEP-1'  src=#marker
+     [boundary STEP-1 observed]
+
+### step 2: tree dump complete
+      0.6172  object:property-change:accessible-name    d1=0   d2=0    any='STEP-2'  src=#marker
+     [boundary STEP-2 observed]
+
+### step 3: focus #edit, caret to start of #p1
+      0.6212  object:text-caret-moved                   d1=0   d2=0    any='0'  src=#p1
+         CARET=0 len=15 text='first paragraph'
+         src role=paragraph states=editable,enabled,sensitive,showing,visible
+         ancestors: #edit > document web
+      0.6232  object:state-changed:focused              d1=0   d2=0    any='0'  src=document web('B2 blockquote crossing in an editable host')
+      0.6234  object:state-changed:focused              d1=1   d2=0    any='0'  src=#edit
+      0.7732  object:property-change:accessible-name    d1=0   d2=0    any='STEP-3'  src=#marker
+     [boundary STEP-3 observed]
+
+### step 4: ArrowDown #1 — INTO the blockquote (#p1 -> #p2)
+      0.7880  object:text-caret-moved                   d1=0   d2=0    any='0'  src=#p2
+         CARET=0 len=11 text='quoted line'
+         src role=paragraph states=editable,enabled,sensitive,showing,visible
+         ancestors: #bq > #edit > document web
+      0.7892  object:property-change:accessible-name    d1=0   d2=0    any='STEP-4'  src=#marker
+     [boundary STEP-4 observed]
+
+### step 5: ArrowDown #2 — OUT of the blockquote (#p2 -> #p3)
+      0.8044  object:text-caret-moved                   d1=0   d2=0    any='0'  src=#p3
+         CARET=0 len=14 text='last paragraph'
+         src role=paragraph states=editable,enabled,sensitive,showing,visible
+         ancestors: #edit > document web
+      0.8051  object:property-change:accessible-name    d1=0   d2=0    any='STEP-5'  src=#marker
+     [boundary STEP-5 observed]
+
+### step 6: ArrowUp #1 — back INTO the blockquote (#p3 -> #p2)
+      0.8210  object:text-caret-moved                   d1=0   d2=0    any='0'  src=#p2
+         CARET=0 len=11 text='quoted line'
+         src role=paragraph states=editable,enabled,sensitive,showing,visible
+         ancestors: #bq > #edit > document web
+      0.8220  object:property-change:accessible-name    d1=0   d2=0    any='STEP-6'  src=#marker
+     [boundary STEP-6 observed]
+
+### step 7: ArrowUp #2 — back OUT to #p1
+      0.8378  object:text-caret-moved                   d1=0   d2=0    any='0'  src=#p1
+         CARET=0 len=15 text='first paragraph'
+         src role=paragraph states=editable,enabled,sensitive,showing,visible
+         ancestors: #edit > document web
+      0.8387  object:property-change:accessible-name    d1=0   d2=0    any='STEP-7'  src=#marker
+     [boundary STEP-7 observed]
+
+### step 8: drain boundary
+      0.9892  object:property-change:accessible-name    d1=0   d2=0    any='STEP-8'  src=#marker
+     [boundary STEP-8 observed]
+
+### step 8: drain boundary
+     [boundary STEP-8 observed]
+
+### after last boundary (teardown)
+      1.0146  object:children-changed:remove            d1=0   d2=0    any={'role': '<err:Error:atspi_error: The application no longer exists (0)>', 'name': '<err:Error:atspi_error: The application no longer exists (0)>'}  src=desktop frame('main')
