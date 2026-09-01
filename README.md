@@ -29,45 +29,80 @@ by any editor vendor.*
 
 You press a key and the editor does something — makes a list, exits a blockquote,
 undoes an edit. For a screen-reader user there are only three possible outcomes, and
-every measured operation lands in exactly one:
+every operation lands in exactly one:
 
-- **Spoken when it happens** — the editor says so ("bulleted list, item 2"), which in
-  every measured case means a live region the editor wrote.
+- **Spoken when it happens** — the user is told at the moment of the change
+  ("bulleted list, item 2").
 - **Silent, but findable** — nothing is said, but the structure is correct, so the user
   who stops and navigates back can discover what happened.
 - **Nothing** — not spoken, and nothing in the accessibility tree to find.
 
-Measured 2026-08 in a real browser (Chromium 141.0.7390.37, headless — **browser-told,
-not user-heard**; no screen reader in the loop). The suite drove 24 container-centric
-operations (lists, headings, blockquotes, code blocks, checklists, history) against
-every editor; an operation counts toward an editor's percentages only when its adapter
-declares every capability it needs (an undeclared checklist is `n/a`, never silence).
-Every cell is reproducible from
+Two layers of evidence, the weaker claim labelled as such. First the whole territory:
+all **218 catalogued operations, read from editor source at pinned versions —
+predicted, not measured**. Each cell is a status in
+[`corpus/canonical.md`](corpus/canonical.md) (`announced` → Spoken, `silent` →
+Findable, `structural-fail` → Nothing); an operation an editor does not implement is
+`n/a` and out of its denominator — never silence. The bet this repository exists to
+underwrite is that these source-read predictions hold when a browser measures them.
+
+| Editor (operations implemented, of 218) | Spoken when it happens | Silent, but findable | Nothing |
+|---|---:|---:|---:|
+| Open Notebook as shipped, `@uiw` 4.0.8 (63) | 6% | 21%¹ | 73% |
+| Lexical 0.49 (174) | 11% | 65% | 24% |
+| CKEditor 5 48.4 (183) | 21%² | 61% | 17% |
+
+(Rows sum to ~100%; rounding can put them one point off. The Spoken column is Part I's
+"reaches the user" figure. Twelve of the 218 rows must correctly announce *nothing* —
+invariant C-2 — and their silent cells sit in the middle column without being
+failures.)
+
+The shape holds across every kind of content, not just the easy ones: even in
+CKEditor, the best column here, code blocks are the only content type where speech is
+the norm (13 of its 18 scenarios) — across lists, blockquotes, headings and tables
+together it speaks in 9 of the 65 it implements. Tiptap's 123-operation inventory
+([`corpus/inventories/tiptap.md`](corpus/inventories/tiptap.md)) is not yet merged
+into the canonical set, so it has no row here; its own source-read headline — zero
+editor-originated announcements across the 111 operations it implements — and its
+measured row below say enough.
+
+Then the browser-confirmed subset. Measured 2026-08 in a real browser (Chromium
+141.0.7390.37, headless — **browser-told, not user-heard**; no screen reader in the
+loop). The suite drove 24 container-centric operations (lists, headings, blockquotes,
+code blocks, checklists, history) against every editor; an operation counts toward an
+editor's percentages only when its adapter declares every capability it needs (an
+undeclared checklist is `n/a`, never silence). Every cell is reproducible from
 [`suite/examples/report-2026-08.json`](suite/examples/report-2026-08.json).
 
 | Editor (operations counted, of 24) | Spoken when it happens | Silent, but findable | Nothing |
 |---|---:|---:|---:|
 | Open Notebook as shipped, raw `@uiw` 4.0.8 (14) | 0% | 14% | 86% |
-| Open Notebook with our fixes (16) | 38%¹ | 13% | 50% |
+| Open Notebook with our fixes (16) | 38%³ | 13% | 50% |
 | Lexical 0.49, stock React setup (18) | 0% | 94% | 6% |
 | Lexical nightly, every announcer on (18) | 17% | 78% | 6% |
 | Tiptap StarterKit 3.30 (20) | 0% | 95% | 5% |
 
-(Rows sum to ~100%; rounding can put them one point off.)
-
-Read it row by row: Tiptap and stock Lexical build nearly everything correctly and
-**never say a word** — the rich editors are silent-but-findable machines. Our Open
-Notebook fixes are the mirror image: the editor now speaks more than any other subject,
-but over a plaintext `<textarea>` there is almost no structure to find afterwards. No
+Where the two layers overlap, the measured subset confirms the predicted shape: the
+rich editors build nearly everything correctly and **never say a word** — they are
+silent-but-findable machines — the plaintext textarea is mostly **Nothing**, and no
 measured editor speaks except through a live region — which confirms, rather than
 discovers, what Part II argues the web platform makes inevitable: a live region is the
-only *at-the-moment* channel an author can write to.
+only *at-the-moment* channel an author can write to. Two honest gaps between the
+layers: CKEditor, the best predicted column, has no measured subject yet; and the
+predicted Lexical column scores the extension-API configuration, while the measured
+stock row shows what the documented React path actually ships — nothing spoken at all.
 
-(Part I's stricter 21% / 11% / 6% figures cover the full 218-operation source-read
-corpus on an at-the-moment axis — kin to the **Spoken** column here, not to
-Spoken + Findable.)
+¹ Findable at its weakest. These 13 operations are the application chrome around the
+editor — dialogs, saves, menus — where real DOM exists to find. On the editing surface
+itself Open Notebook is a markdown `<textarea>`, and markdown punctuation in a plain
+textbox is not navigable structure: every container operation it implements (17 of 17)
+lands in **Nothing**.
 
-¹ Spoken once, through a live region, with nothing to return to afterwards — real
+² Spoken credits the platform as well as the editor: where a screen reader reports a
+list on its own, from markup the editor merely emitted correctly, the row counts as
+Spoken. Count only what the editor itself says and every figure falls further
+(Part I §3).
+
+³ Spoken once, through a live region, with nothing to return to afterwards — real
 progress, and still the weakest kind of speech there is.
 
 **Why the columns split this way.** A live region is an author writing an English
