@@ -27,44 +27,56 @@ by any editor vendor.*
 
 ## The data at a glance
 
+You press a key and the editor does something — makes a list, exits a blockquote,
+undoes an edit. For a screen-reader user there are only three possible outcomes, and
+every measured operation lands in exactly one:
+
+- **Spoken when it happens** — the editor says so ("bulleted list, item 2"), which in
+  every measured case means a live region the editor wrote.
+- **Silent, but findable** — nothing is said, but the structure is correct, so the user
+  who stops and navigates back can discover what happened.
+- **Nothing** — not spoken, and nothing in the accessibility tree to find.
+
 Measured 2026-08 in a real browser (Chromium 141.0.7390.37, headless — **browser-told,
-not user-heard**; no screen reader in the loop), over the 24 container-centric operations
-the suite currently drives: lists, headings, blockquotes, code blocks, checklists,
-history. All 24 were driven against every editor; an operation counts toward an editor's
-percentages only when its adapter declares every capability the operation needs (an
-undeclared checklist is `n/a`, never silence), so the denominators differ per editor.
-Note the axis: **"reaches the user" here includes information a user only finds by later
-navigation.** Part I's stricter percentages (21% / 11% / 6%, over the full 218-operation
-source-read corpus) are an *at-the-moment* axis — operations whose change is reported as
-it happens, whether by the editor or by a screen reader's own reading of correct
-structure — closest to this table's bottom row, not its top one. Every cell below is reproducible from
+not user-heard**; no screen reader in the loop). The suite drove 24 container-centric
+operations (lists, headings, blockquotes, code blocks, checklists, history) against
+every editor; an operation counts toward an editor's percentages only when its adapter
+declares every capability it needs (an undeclared checklist is `n/a`, never silence).
+Every cell is reproducible from
 [`suite/examples/report-2026-08.json`](suite/examples/report-2026-08.json).
 
-| | Open Notebook (raw `@uiw` 4.0.8) | Open Notebook (our fixes) | Lexical 0.49 (stock React) | Lexical nightly (all announcers) | Tiptap StarterKit 3.30 |
-|---|---:|---:|---:|---:|---:|
-| Operations counted (of 24 driven) | 14 | 16 | 18 | 18 | 20 |
-| **Information reaches the user** | **14%** | **50%** | **94%** | **94%** | **95%** |
-| — silent when it happens; findable later through the API | 14% | 13% | 94% | 78% | 95% |
-| — told when it happens — in every measured case, by a live region | 0% | 38%¹ | 0% | 17% | 0% |
+| Editor (operations counted, of 24) | Spoken when it happens | Silent, but findable | Nothing |
+|---|---:|---:|---:|
+| Open Notebook as shipped, raw `@uiw` 4.0.8 (14) | 0% | 14% | 86% |
+| Open Notebook with our fixes (16) | 38%¹ | 13% | 50% |
+| Lexical 0.49, stock React setup (18) | 0% | 94% | 6% |
+| Lexical nightly, every announcer on (18) | 17% | 78% | 6% |
+| Tiptap StarterKit 3.30 (20) | 0% | 95% | 5% |
 
-(The two sub-rows partition the total; they may not sum exactly due to rounding.)
+(Rows sum to ~100%; rounding can put them one point off.)
 
-**No measured editor tells the user anything at the moment except through a live
-region.** That confirms, rather than discovers, what Part II argues the web platform
-makes inevitable: a live region is the only *at-the-moment* channel an author can write
-to, so everything else an editor knows sits silently in the tree until the user stops
-and goes looking.
+Read it row by row: Tiptap and stock Lexical build nearly everything correctly and
+**never say a word** — the rich editors are silent-but-findable machines. Our Open
+Notebook fixes are the mirror image: the editor now speaks more than any other subject,
+but over a plaintext `<textarea>` there is almost no structure to find afterwards. No
+measured editor speaks except through a live region — which confirms, rather than
+discovers, what Part II argues the web platform makes inevitable: a live region is the
+only *at-the-moment* channel an author can write to.
 
-¹ Our own fixes announce through a live region over a plaintext `<textarea>`: the user
-hears the change once, but there is no structure to return to afterwards. Real progress,
-and still the weakest kind of "reaches the user" there is.
+(Part I's stricter 21% / 11% / 6% figures cover the full 218-operation source-read
+corpus on an at-the-moment axis — kin to the **Spoken** column here, not to
+Spoken + Findable.)
 
-**Why the live-region column matters.** A live region is an author writing an English
-sentence because the platform gave them no way to say it semantically. Wherever that
-column is non-zero, the accessibility API is missing a way to describe what just
-happened; wherever it is zero while "reaches the user" is high, the information sits
-silently in the tree — nothing can say *"a list just started."* Both halves point at the
-same gap (Part II), and here is where it lives, layer by layer:
+¹ Spoken once, through a live region, with nothing to return to afterwards — real
+progress, and still the weakest kind of speech there is.
+
+**Why the columns split this way.** A live region is an author writing an English
+sentence because the platform gave them no way to say it semantically — so a non-zero
+**Spoken** column means the accessibility API was missing a way to describe what just
+happened, and a large **Silent, but findable** column means the information sits in the
+tree with no way to reach the user at the moment: nothing can say *"a list just
+started."* Both columns point at the same gap (Part II), and here is where it lives,
+layer by layer:
 
 | Layer | What is missing | Evidence |
 |---|---|---|
